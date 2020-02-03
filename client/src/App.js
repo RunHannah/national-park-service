@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
+import List from './components/List';
 
 class App extends Component {
   state = {
-    response: []
+    data: []
   };
 
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({ response: res.data }))
+      .then(res => this.setState({ data: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -18,13 +19,17 @@ class App extends Component {
 
     if (response.status !== 200) throw Error(body.message);
 
+    console.log('body', body.data);
     return body;
   };
 
   render() {
+    const { data } = this.state;
+
     return (
       <div>
-        <p>Hello World</p>
+        <h1>List of National Parks</h1>
+        <List data={data} />
       </div>
     );
   }

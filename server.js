@@ -7,7 +7,7 @@ app.get('/data', async (req, res) => {
   try {
     await axios
       .get(
-        `${config.BASE_URL}/${config.BASE_PARAMS}acad&api_key=${config.API_KEY}`
+        `${config.BASE_URL}/${config.BASE_PARAMS}ca&api_key=${config.API_KEY}`
       )
       .then(response => {
         console.log('response.json', response.data);
