@@ -3,12 +3,34 @@ import React, { Component } from 'react';
 const formStyle = {
   height: '135px',
   width: '100%',
+  fontFamily: 'inherit',
   backgroundColor: 'rgba(0,0,0,.5)',
   position: 'absolute',
   bottom: '0',
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  alignContent: 'space-around'
+};
+
+const linkStyle = {
+  textDecoration: 'underline',
+  color: '#FFFFFF',
+  cursor: 'pointer',
+  fontWeight: '700',
+  fontSize: '16px'
+};
+
+const selectDivStyle = {
+  maxWidth: '803px',
+  width: '100%'
+};
+
+const selectStyle = {
+  width: '100%',
+  height: '25px',
+  marginTop: '15px'
 };
 
 class SearchForm extends Component {
@@ -45,9 +67,19 @@ class SearchForm extends Component {
   render() {
     return (
       <div style={formStyle}>
-        <label>
-          By State...
-          <select value={this.state.value} onChange={this.handleChange}>
+        <div>
+          <label>
+            <a style={linkStyle} href=''>
+              FIND A PARK
+            </a>
+          </label>
+        </div>
+        <div style={selectDivStyle}>
+          <select
+            style={selectStyle}
+            value={this.state.value}
+            onChange={this.handleChange}
+          >
             <option value='AL' onClick={this.handleOnClick}>
               Alabama
             </option>
@@ -70,7 +102,14 @@ class SearchForm extends Component {
               Colorado
             </option>
           </select>
-        </label>
+        </div>
+        <div>
+          <p>
+            <a style={linkStyle} href=''>
+              See All Parks & Search By Map
+            </a>
+          </p>
+        </div>
       </div>
     );
   }
