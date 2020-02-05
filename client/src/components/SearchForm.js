@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 
+const formStyle = {
+  height: '135px',
+  width: '100%',
+  backgroundColor: 'rgba(0,0,0,.5)',
+  position: 'absolute',
+  bottom: '0',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+};
+
 class SearchForm extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +44,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <div>
+      <div style={formStyle}>
         <label>
           By State...
           <select value={this.state.value} onChange={this.handleChange}>
