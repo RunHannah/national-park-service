@@ -2,6 +2,8 @@ import React from 'react';
 import ListDetail from './ListDetail';
 
 function List({ data }) {
+  console.log('List Component');
+
   return (
     <div>
       {Object.keys(data).map(item => (

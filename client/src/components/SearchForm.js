@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import List from './List';
 
 const formStyle = {
   height: '135px',
@@ -22,46 +24,57 @@ const linkStyle = {
   fontSize: '16px'
 };
 
-const selectDivStyle = {
-  maxWidth: '803px',
-  width: '100%'
-};
-
-const selectStyle = {
-  width: '100%',
-  height: '25px',
-  marginTop: '15px'
+const dropdownMenu = {
+  display: 'block',
+  position: 'absolute',
+  listStyle: 'none'
 };
 
 class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      data: []
+      displayMenu: false,
+      // stateValue: '',
+      data: [],
+      loading: true
     };
   }
 
-  callApi = async () => {
-    const { value } = this.state;
-    const response = await fetch(`http://localhost:5000?state=${value}`);
+  callApi = async state => {
+    const response = await fetch(`http://localhost:5000?state=${state}`);
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);
 
-    this.setState({ data: body.data });
-    console.log('this.state.data', this.state.data);
+    this.setState({ data: body.data, loading: false, displayMenu: false });
+    this.routeToList(this.state.data, state);
   };
 
-  handleChange = event => {
-    this.setState({
-      value: event.target.value
-    });
+  showDropdownMenu = () => {
+    this.setState({ displayMenu: true });
   };
 
-  handleOnClick = event => {
-    event.preventDefault();
-    this.callApi();
+  hideDropdownMenu = () => {
+    this.setState({ displayMenu: false });
+  };
+
+  selectState = state => {
+    this.callApi(state);
+  };
+
+  routeToList = (stateData, state) => {
+    console.log('stateData', stateData);
+    // return (
+    //   <div>
+    //     {!this.state.loading ? (
+    //       <Route
+    //         path={`/state/${state}`}
+    //         render={() => <List data={stateData} />}
+    //       />
+    //     ) : null}
+    //   </div>
+    // );
   };
 
   render() {
@@ -74,34 +87,30 @@ class SearchForm extends Component {
             </a>
           </label>
         </div>
-        <div style={selectDivStyle}>
-          <select
-            style={selectStyle}
-            value={this.state.value}
-            onChange={this.handleChange}
+        <div>
+          <button
+            onClick={
+              !this.state.displayMenu
+                ? this.showDropdownMenu
+                : this.hideDropdownMenu
+            }
           >
-            <option value='AL' onClick={this.handleOnClick}>
-              Alabama
-            </option>
-            <option value='AK' onClick={this.handleOnClick}>
-              Alaska
-            </option>
-            <option value='AS' onClick={this.handleOnClick}>
-              American Samoa
-            </option>
-            <option value='AZ' onClick={this.handleOnClick}>
-              Arizona
-            </option>
-            <option value='AR' onClick={this.handleOnClick}>
-              Arkansas
-            </option>
-            <option value='CA' onClick={this.handleOnClick}>
-              California
-            </option>
-            <option value='CO' onClick={this.handleOnClick}>
-              Colorado
-            </option>
-          </select>
+            Select A State
+          </button>
+          {this.state.displayMenu ? (
+            <ul style={dropdownMenu}>
+              <li>
+                <a href='#' onClick={this.selectState.bind(this, 'AL')}>
+                  AL
+                </a>
+              </li>
+              <li>
+                <a href='#' onClick={this.selectState.bind(this, 'ME')}>
+                  ME
+                </a>
+              </li>
+            </ul>
+          ) : null}
         </div>
         <div>
           <p>
