@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import List from './List';
 
 const formStyle = {
   height: '135px',
@@ -34,22 +32,9 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayMenu: false,
-      // stateValue: '',
-      data: [],
-      loading: true
+      displayMenu: false
     };
   }
-
-  callApi = async state => {
-    const response = await fetch(`http://localhost:5000?state=${state}`);
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    this.setState({ data: body.data, loading: false, displayMenu: false });
-    this.routeToList(this.state.data, state);
-  };
 
   showDropdownMenu = () => {
     this.setState({ displayMenu: true });
@@ -59,25 +44,27 @@ class SearchForm extends Component {
     this.setState({ displayMenu: false });
   };
 
-  selectState = state => {
-    this.callApi(state);
-  };
+  clickState = state => {
+    this.props.selectState(state);
 
-  routeToList = (stateData, state) => {
-    console.log('stateData', stateData);
-    // return (
-    //   <div>
-    //     {!this.state.loading ? (
-    //       <Route
-    //         path={`/state/${state}`}
-    //         render={() => <List data={stateData} />}
-    //       />
-    //     ) : null}
-    //   </div>
-    // );
+    this.setState({
+      displayMenu: !this.state.displayMenu
+    });
   };
 
   render() {
+    // const { stateValue, data } = this.state;
+
+    // if (this.state.loading === false) {
+    //   console.log('routing?');
+    //   return (
+    //     <Switch>
+    //       <Redirect to={`/state/${stateValue}`} />
+    //       <Route path={`/state/${stateValue}`} render={() => <div>List</div>} />
+    //     </Switch>
+    //   );
+    // }
+
     return (
       <div style={formStyle}>
         <div>
@@ -100,12 +87,12 @@ class SearchForm extends Component {
           {this.state.displayMenu ? (
             <ul style={dropdownMenu}>
               <li>
-                <a href='#' onClick={this.selectState.bind(this, 'AL')}>
+                <a href='#' onClick={() => this.clickState('AL')}>
                   AL
                 </a>
               </li>
               <li>
-                <a href='#' onClick={this.selectState.bind(this, 'ME')}>
+                <a href='#' onClick={() => this.clickState('ME')}>
                   ME
                 </a>
               </li>
@@ -114,7 +101,7 @@ class SearchForm extends Component {
         </div>
         <div>
           <p>
-            <a style={linkStyle} href=''>
+            <a style={linkStyle} href='#'>
               See All Parks & Search By Map
             </a>
           </p>
