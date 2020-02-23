@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import stateList from '../stateList';
 
 const formStyle = {
   height: '135px',
@@ -33,7 +34,8 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayMenu: false
+      displayMenu: false,
+      stateList: stateList
     };
   }
 
@@ -54,11 +56,24 @@ class SearchForm extends Component {
   };
 
   render() {
+    const { stateList } = this.state;
+
+    const stateMenu = stateList.map(item => (
+      <li key={item.fullName}>
+        <Link
+          to={`/state/${item.state}`}
+          onClick={() => this.clickState(`${item.state}`)}
+        >
+          {item.fullName}
+        </Link>
+      </li>
+    ));
+
     return (
       <div style={formStyle}>
         <div>
           <label>
-            <a style={linkStyle} href=''>
+            <a style={linkStyle} href='nps.gov'>
               FIND A PARK
             </a>
           </label>
@@ -74,23 +89,12 @@ class SearchForm extends Component {
             Select A State
           </button>
           {this.state.displayMenu ? (
-            <ul style={dropdownMenu}>
-              <li>
-                <Link to='/state/AL' onClick={() => this.clickState('AL')}>
-                  AL
-                </Link>
-              </li>
-              <li>
-                <Link to='/state/ME' onClick={() => this.clickState('ME')}>
-                  ME
-                </Link>
-              </li>
-            </ul>
+            <ul style={dropdownMenu}>{stateMenu}</ul>
           ) : null}
         </div>
         <div>
           <p>
-            <a style={linkStyle} href='#'>
+            <a style={linkStyle} href='nps.gov'>
               See All Parks & Search By Map
             </a>
           </p>
