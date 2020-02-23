@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const formStyle = {
   height: '135px',
@@ -53,18 +54,6 @@ class SearchForm extends Component {
   };
 
   render() {
-    // const { stateValue, data } = this.state;
-
-    // if (this.state.loading === false) {
-    //   console.log('routing?');
-    //   return (
-    //     <Switch>
-    //       <Redirect to={`/state/${stateValue}`} />
-    //       <Route path={`/state/${stateValue}`} render={() => <div>List</div>} />
-    //     </Switch>
-    //   );
-    // }
-
     return (
       <div style={formStyle}>
         <div>
@@ -87,14 +76,14 @@ class SearchForm extends Component {
           {this.state.displayMenu ? (
             <ul style={dropdownMenu}>
               <li>
-                <a href='#' onClick={() => this.clickState('AL')}>
+                <Link to='/state/AL' onClick={() => this.clickState('AL')}>
                   AL
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='#' onClick={() => this.clickState('ME')}>
+                <Link to='/state/ME' onClick={() => this.clickState('ME')}>
                   ME
-                </a>
+                </Link>
               </li>
             </ul>
           ) : null}

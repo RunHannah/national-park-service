@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import HomepageContainer from './HomepageContainer';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import HomepageHero from './HomepageHero';
+import ArticleContent from './ArticleContent';
+import { Route } from 'react-router-dom';
 import List from './List';
 
 const landingStyle = {
@@ -16,9 +17,7 @@ class Landing extends Component {
       isLoading: true
     };
   }
-
   callApi = async state => {
-    console.log('call Api', state);
     const response = await fetch(`http://localhost:5000?state=${state}`);
     const body = await response.json();
 
@@ -28,35 +27,28 @@ class Landing extends Component {
       data: body.data,
       loading: false
     });
-
-    console.log('data', this.state.data);
   };
 
   selectState = state => {
-    console.log('state', state);
     this.setState({ stateValue: state });
-
     this.callApi(state);
   };
 
   render() {
-    const { stateValue, data } = this.state;
-
     if (this.state.loading === false) {
-      console.log('routing?');
+      let { stateValue, data } = this.state;
+
       return (
-        <Switch>
-          <Redirect to={`/state/${stateValue}`} />
-          <Route path={`/state/${stateValue}`}>
-            <List data={data} />
-          </Route>
-        </Switch>
+        <Route path={`/state/${stateValue}`}>
+          <List data={data} />
+        </Route>
       );
     }
 
     return (
       <div style={landingStyle}>
-        <HomepageContainer selectState={this.selectState} />
+        <HomepageHero selectState={this.selectState} />
+        <ArticleContent />
       </div>
     );
   }
