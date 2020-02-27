@@ -1,34 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import stateList from '../stateList';
-
-const formStyle = {
-  height: '135px',
-  width: '100%',
-  fontFamily: 'inherit',
-  backgroundColor: 'rgba(0,0,0,.5)',
-  position: 'absolute',
-  bottom: '0',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  alignContent: 'space-around'
-};
-
-const linkStyle = {
-  textDecoration: 'underline',
-  color: '#FFFFFF',
-  cursor: 'pointer',
-  fontWeight: '700',
-  fontSize: '16px'
-};
-
-const dropdownMenu = {
-  display: 'block',
-  position: 'absolute',
-  listStyle: 'none'
-};
+import './SearchForm.css';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -70,10 +43,10 @@ class SearchForm extends Component {
     ));
 
     return (
-      <div style={formStyle}>
+      <div className='formStyle'>
         <div>
           <label>
-            <a style={linkStyle} href='nps.gov'>
+            <a className='linkStyle' href='nps.gov' target='_blank'>
               FIND A PARK
             </a>
           </label>
@@ -89,12 +62,12 @@ class SearchForm extends Component {
             Select A State
           </button>
           {this.state.displayMenu ? (
-            <ul style={dropdownMenu}>{stateMenu}</ul>
+            <ul className='dropdownMenu'>{stateMenu}</ul>
           ) : null}
         </div>
         <div>
           <p>
-            <a style={linkStyle} href='nps.gov'>
+            <a className='linkStyle' href='nps.gov'>
               See All Parks & Search By Map
             </a>
           </p>

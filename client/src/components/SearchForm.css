@@ -1,0 +1,27 @@
+.formStyle {
+  height: 135px;
+  width: 100%;
+  font-family: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.linkStyle {
+  text-decoration: underline;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.dropdownMenu {
+  display: block;
+  position: absolute;
+  list-style: none;
+}
