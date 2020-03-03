@@ -1,6 +1,6 @@
 const menuList = [
   {
-    id: 1,
+    id: 'planYourVisit',
     section: 'Plan Your Visit',
     items: [
       {
@@ -18,7 +18,7 @@ const menuList = [
     ]
   },
   {
-    id: 2,
+    id: 'learnAndExplore',
     section: 'Learn & Explore',
     items: [
       {
@@ -48,7 +48,7 @@ const menuList = [
     ]
   },
   {
-    id: 3,
+    id: 'getInvolved',
     section: 'Get Involved',
     items: [
       {
@@ -69,7 +69,7 @@ const menuList = [
     ]
   },
   {
-    id: 4,
+    id: 'searchForParks',
     section: 'image',
     items: [
       {

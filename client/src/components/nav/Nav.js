@@ -12,14 +12,14 @@ class Nav extends Component {
       <div className='navContainer'>
         <ul className='navList'>
           {this.state.menuList.map(obj => (
-            <li className='list' key={obj.id}>
+            <li className={`list ${obj.id}`} key={obj.id}>
               <a href=''>
                 <span>{obj.section}</span>
               </a>
               <ul className='items'>
                 {obj.items.map(sub => {
                   return (
-                    <li key={sub.service}>
+                    <li class='item' key={sub.service}>
                       <a href=''>
                         <span>{sub.service}</span>
                       </a>
