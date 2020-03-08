@@ -1,0 +1,15 @@
+.navContainer {
+  width: 100%;
+  background-color: #000;
+  max-width: 980px;
+  margin: auto;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0;
+  list-style-type: none;
+  line-height: 2;
+}

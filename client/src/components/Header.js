@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import Nav from './nav/Nav';
+import NavDesktop from './nav/NavDesktop';
+import NavMobile from './nav/NavMobile';
 import './nav/Nav.css';
 
 class Header extends Component {
   state = {
-    menuOpen: false
+    menuOpen: false,
+    screenWidth: window.innerWidth
   };
 
   toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
 
   render() {
-    let { menuOpen } = this.state;
+    let { menuOpen, screenWidth } = this.state;
 
     return (
       <div className='container'>
@@ -22,7 +24,11 @@ class Header extends Component {
             {menuOpen ? 'close' : 'menu'}
           </button>
         </div>
-        {menuOpen ? <Nav /> : null}
+        {menuOpen && screenWidth < 1024 ? (
+          <NavMobile />
+        ) : menuOpen && screenWidth >= 1024 ? (
+          <NavDesktop />
+        ) : null}
       </div>
     );
   }

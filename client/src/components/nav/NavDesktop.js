@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import menuList from './menuList';
 import './Nav.css';
 
-class Nav extends Component {
+class NavDesktop extends Component {
   state = {
     menuList: menuList
   };
@@ -35,4 +35,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default NavDesktop;
