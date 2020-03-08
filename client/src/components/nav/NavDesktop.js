@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import menuList from './menuList';
-import './Nav.css';
+import './NavDesktop.css';
 
 class NavDesktop extends Component {
   state = {
@@ -9,8 +9,8 @@ class NavDesktop extends Component {
 
   render() {
     return (
-      <div className='navContainer'>
-        <ul className='navList'>
+      <div className='navDesktopContainer'>
+        <ul className='navDesktopList'>
           {this.state.menuList.map(obj => (
             <li className={`list ${obj.id}`} key={obj.id}>
               <a href=''>

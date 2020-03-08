@@ -10,7 +10,6 @@ class NavMobile extends Component {
   };
 
   handleOnClick = index => {
-    console.log('handleClicked', index);
     let { isListOpen, menuIndex } = this.state;
     this.setState({ isListOpen: !isListOpen, menuIndex: index });
   };
@@ -18,7 +17,6 @@ class NavMobile extends Component {
   showList = () => {
     const { menuList, menuIndex } = this.state;
     let showListItems = menuList[menuIndex].items;
-    console.log('showListItems', showListItems);
 
     return (
       <ul>
@@ -34,11 +32,10 @@ class NavMobile extends Component {
   };
 
   render() {
-    const { menuList, isListOpen, menuIndex } = this.state;
-    console.log('menuList', menuList);
+    const { isListOpen, menuIndex } = this.state;
 
     return (
-      <div className='navContainer'>
+      <div className='navMobileContainer'>
         <ul className='navList'>
           <li onClick={this.handleOnClick.bind(this, 0)}>
             <a>

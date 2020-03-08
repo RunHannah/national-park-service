@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import NavDesktop from './nav/NavDesktop';
 import NavMobile from './nav/NavMobile';
-import './nav/Nav.css';
+import './Header.css';
 
 class Header extends Component {
-  state = {
-    menuOpen: false,
-    screenWidth: window.innerWidth
-  };
+  constructor() {
+    super();
+    this.state = {
+      menuOpen: false,
+      screenWidth: null
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ screenWidth: window.innerWidth });
+  }
 
   toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
 
