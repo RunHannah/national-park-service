@@ -36,12 +36,13 @@ class Landing extends Component {
 
   render() {
     if (this.state.loading === false) {
-      let { stateValue, data } = this.state;
+      let { data } = this.state;
 
       return (
-        <Route path={`/state/${stateValue}`}>
-          <List data={data} />
-        </Route>
+        <Route
+          path='/state/:state'
+          render={props => <List data={data} {...props} />}
+        />
       );
     }
 
