@@ -15,14 +15,17 @@ MongoClient.connect('mongodb://localhost:27017/npsBlog', (err, client) => {
 app.use(cors());
 
 app.get('/', async (req, res) => {
-  const collection = req.app.locals.collection;
+  try {
+    const collection = req.app.locals.collection;
+    collection
+      .find({})
+      .toArray()
+      .then(response => res.json(response));
 
-  collection
-    .find({})
-    .toArray()
-    .then(response => res.json(response));
-
-  res.send({ collectionData: collection });
+    res.send({ collectionData: collection });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.get('/parks', async (req, res) => {
@@ -32,8 +35,6 @@ app.get('/parks', async (req, res) => {
       .then(response => {
         res.json(response.data);
       });
-
-    console.log('server parks', response.data);
   } catch (error) {
     console.log(error);
   }

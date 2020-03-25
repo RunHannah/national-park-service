@@ -15,7 +15,8 @@ class Landing extends Component {
       data: [],
       stateValue: '',
       isLoading: true,
-      blogData: []
+      blogData: [],
+      stateParksData: []
     };
   }
 
@@ -30,7 +31,8 @@ class Landing extends Component {
     await fetch('http://localhost:5000/parks')
       .then(response => response.json())
       .then(data => {
-        this.setState({ data: data.data });
+        console.log('PARK DATA', data);
+        this.setState({ data: data.data, isLoading: false });
       });
   }
 
@@ -48,19 +50,28 @@ class Landing extends Component {
 
   selectState = state => {
     this.setState({ stateValue: state });
-    this.callApi(state);
+    // this.callApi(state);
+    this.filterParks(state);
+  };
+
+  filterParks = state => {
+    const { data } = this.state;
+    let filteredData = [];
+
+    filteredData = data.filter(obj => obj.states === state);
+    this.setState({ stateParksData: filteredData });
   };
 
   render() {
-    const { blogData } = this.state;
+    const { blogData, isLoading, stateParksData } = this.state;
 
-    if (this.state.loading === false) {
-      let { data } = this.state;
+    if (!isLoading && stateParksData.length > 0) {
+      let { stateParksData } = this.state;
 
       return (
         <Route
           path='/state/:state'
-          render={props => <List data={data} {...props} />}
+          render={props => <List data={stateParksData} {...props} />}
         />
       );
     }
