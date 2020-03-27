@@ -9,7 +9,7 @@ const homepageStyle = {
   position: 'relative',
   backgroundRepeat: 'no-repeat',
   backgroundImage:
-    'url(https://www.nps.gov/common/uploads/hero_home/pwr/promo/E052A9A8-A3F4-4DE7-D6BE93167275B34D.jpg?width=2400&height=700&mode=crop&quality=90)'
+    'url(https://www.nps.gov/common/uploads/hero_home/pwr/promo/56ED3EB8-F05E-2155-F4563FA4940DDC16.jpg?width=2400&height=700&mode=crop&quality=90)'
 };
 
 function HomepageHero(props) {
