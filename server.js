@@ -21,8 +21,6 @@ app.get('/', async (req, res) => {
       .find({})
       .toArray()
       .then(response => res.json(response));
-
-    res.send({ collectionData: collection });
   } catch (error) {
     console.log(error);
   }
