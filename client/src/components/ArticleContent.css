@@ -1,0 +1,70 @@
+.blogContainer {
+  width: 97%;
+  margin: 25px auto;
+}
+
+.blogList {
+  display: grid;
+  grid-template-columns: 1;
+}
+
+.post {
+  margin: 0 auto 40px auto;
+  width: 100%;
+}
+
+.postTitle {
+  font-weight: 700;
+  margin-bottom: 0.3125rem;
+}
+
+.postImg {
+  width: 100%;
+}
+
+.postDescription {
+  line-height: 1.5;
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.blogList div:nth-of-type(9) {
+  background-image: url(https://www.nps.gov/common/commonspot/templates/images/promos/npf-blue-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 395px;
+  color: #fff;
+  text-align: left;
+}
+
+.blogList div:nth-of-type(9) .postImg {
+  width: 300px;
+  margin: 0 30px;
+}
+
+.blogList div:nth-of-type(9) .postTitle {
+  display: none;
+}
+
+.blogList div:nth-of-type(9) .postDescription {
+  margin: 10px 30px;
+}
+
+@media (min-width: 768px) {
+  .blogList {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+  }
+
+  .blogList div:nth-of-type(9) .postImg {
+    width: inherit;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blogContainer {
+    width: 60%;
+  }
+}
