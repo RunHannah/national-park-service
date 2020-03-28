@@ -1,7 +1,7 @@
 import React from 'react';
-import './ArticleContent.css';
+import './blogContent.css';
 
-function MainContent({ blogData }) {
+function BlogContent({ blogData }) {
   console.log('blogData', blogData);
 
   return (
@@ -21,4 +21,4 @@ function MainContent({ blogData }) {
   );
 }
 
-export default MainContent;
+export default BlogContent;

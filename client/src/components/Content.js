@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomepageHero from './HomepageHero';
-import ArticleContent from './ArticleContent';
+import BlogContent from './blogContent';
 import { Route } from 'react-router-dom';
 import List from './List';
 
@@ -80,7 +80,7 @@ class Landing extends Component {
       return (
         <div style={landingStyle}>
           <HomepageHero selectState={this.selectState} />
-          <ArticleContent blogData={blogData} />
+          <BlogContent blogData={blogData} />
         </div>
       );
     }
