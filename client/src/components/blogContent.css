@@ -23,9 +23,8 @@
 }
 
 .postDescription {
-  line-height: 1.5;
+  line-height: 24px;
   margin: 0 0 10px;
-  font-size: 14px;
 }
 
 .blogList div:nth-of-type(9) {
@@ -49,24 +48,29 @@
 
 .blogList div:nth-of-type(9) .postDescription {
   margin: 10px 30px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .blogList {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
   }
 
   .blogList div:nth-of-type(9) .postImg {
-    width: inherit;
-    margin: 0 auto;
+    width: 172px;
   }
 }
 
 @media (min-width: 1024px) {
-  /* .blogContainer {
-    width: 60%;
-  } */
+  .blogList {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+  }
+  .blogList div:nth-of-type(9) .postImg {
+    width: 250px;
+  }
 }
 
 @media (min-width: 1200px) {
