@@ -1,9 +1,69 @@
-.homepageStyle {
-  height: 500px;
+.homepageContainer {
+  height: 550px;
   width: 100%;
   background-position: 50%;
   background-size: cover;
   position: relative;
   background-repeat: no-repeat;
   background-image: url(https://www.nps.gov/common/uploads/hero_home/pwr/promo/56ED3EB8-F05E-2155-F4563FA4940DDC16.jpg?width=2400&height=700&mode=crop&quality=90);
+}
+
+.content {
+  position: absolute;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  margin: 80px 0;
+}
+
+.contentTitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.contentSubtitle {
+  font-size: 45px;
+  font-family: Open Sans, Arial, sans-serif;
+  font-weight: 400;
+  margin: 5px 0 15px;
+}
+
+.contentButton {
+  background-color: #4b5e26;
+  font-weight: 900;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px 14px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.15s ease-out;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .content {
+    width: 50%;
+    padding: 25px 30px;
+  }
+  .contentSubtitle {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .homepageWrapper {
+    height: 100%;
+  }
+  .contentWrapper {
+    height: 100%;
+    display: flex;
+    width: 980px;
+    margin: 0 auto;
+  }
+  .content {
+    width: 440px;
+    padding: 25px 30px;
+  }
 }
