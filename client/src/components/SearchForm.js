@@ -32,8 +32,9 @@ class SearchForm extends Component {
     const { stateList } = this.state;
 
     const stateMenu = stateList.map(item => (
-      <li key={item.fullName}>
+      <li className='stateItem' key={item.fullName}>
         <Link
+          className='stateLink'
           to={`/state/${item.state}`}
           onClick={() => this.clickState(`${item.state}`)}
         >
@@ -43,23 +44,24 @@ class SearchForm extends Component {
     ));
 
     return (
-      <div className='formStyle'>
-        <div>
+      <div className='formContainer'>
+        <div className='findButton'>
           <label>
             <a className='linkStyle' href='nps.gov' target='_blank'>
               FIND A PARK
             </a>
           </label>
         </div>
-        <div>
+        <div className='searchBar'>
           <button
+            className='searchButton'
             onClick={
               !this.state.displayMenu
                 ? this.showDropdownMenu
                 : this.hideDropdownMenu
             }
           >
-            Select A State
+            By State...
           </button>
           {this.state.displayMenu ? (
             <ul className='dropdownMenu'>{stateMenu}</ul>
@@ -67,7 +69,7 @@ class SearchForm extends Component {
         </div>
         <div>
           <p>
-            <a className='linkStyle' href='nps.gov'>
+            <a className='linkStyle advancedSearch' href='nps.gov'>
               See All Parks & Search By Map
             </a>
           </p>
