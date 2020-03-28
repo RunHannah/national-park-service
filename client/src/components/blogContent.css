@@ -52,22 +52,17 @@
   font-weight: 600;
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media (min-width: 765px) {
   .blogList {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
   }
-
   .blogList div:nth-of-type(9) .postImg {
-    width: 172px;
+    width: 80%;
   }
 }
 
 @media (min-width: 1024px) {
-  .blogList {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-  }
   .blogList div:nth-of-type(9) .postImg {
     width: 250px;
   }
