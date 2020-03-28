@@ -64,7 +64,13 @@
 }
 
 @media (min-width: 1024px) {
-  .blogContainer {
+  /* .blogContainer {
     width: 60%;
+  } */
+}
+
+@media (min-width: 1200px) {
+  .blogContainer {
+    width: 980px;
   }
 }
