@@ -5,7 +5,13 @@ const config = require('./config');
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://localhost:27017/npsBlog', (err, client) => {
+const url = 'mongodb://localhost:27017/npsBlog';
+const client = new MongoClient(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+client.connect((err, client) => {
   if (err) throw err;
   const db = client.db('npsBlog');
   const collection = db.collection('posts');
