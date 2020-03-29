@@ -14,16 +14,30 @@ const client = new MongoClient(url, {
 client.connect((err, client) => {
   if (err) throw err;
   const db = client.db('npsBlog');
-  const collection = db.collection('posts');
-  app.locals.collection = collection;
+  const postsCollection = db.collection('posts');
+  const promosCollection = db.collection('contentPromos');
+  app.locals.postsCollection = postsCollection;
+  app.locals.promosCollection = promosCollection;
 });
 
 app.use(cors());
 
 app.get('/', async (req, res) => {
   try {
-    const collection = req.app.locals.collection;
-    collection
+    const postsCollection = req.app.locals.postsCollection;
+    postsCollection
+      .find({})
+      .toArray()
+      .then(response => res.json(response));
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+app.get('/promos', async (req, res) => {
+  try {
+    const promosCollection = req.app.locals.promosCollection;
+    promosCollection
       .find({})
       .toArray()
       .then(response => res.json(response));
