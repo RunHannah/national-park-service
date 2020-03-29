@@ -1,11 +1,15 @@
 .siteContainer {
   display: flex;
   flex-direction: column;
+  margin: 0 5px;
+}
+
+.siteWrapper {
   background-image: url('https://www.nps.gov/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .siteTitle {
@@ -17,6 +21,7 @@
 }
 
 .siteButtons {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,8 +51,24 @@
 
 .findYourPark {
   width: 100%;
+  margin-bottom: 120px;
 }
 
 .findYourPark img {
   width: 100%;
+}
+
+@media (min-device-width: 768px) {
+  .siteButtons {
+    flex-direction: row;
+    margin-top: 60px;
+    bottom: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .siteContainer {
+    width: 980px;
+    margin: 25px auto;
+  }
 }
