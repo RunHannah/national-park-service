@@ -31,6 +31,7 @@
   margin: 25px;
   color: #fff;
   font-weight: 900;
+  font-size: 12px;
 }
 
 .subTitle {
@@ -78,6 +79,7 @@
   }
   .promoContent {
     top: 225px;
+    font-size: 18px;
   }
 }
 
@@ -89,7 +91,6 @@
   .promoContent {
     top: 225px;
     font-weight: 800;
-    /* font-size: 12px; */
   }
 }
 
