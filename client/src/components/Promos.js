@@ -14,17 +14,19 @@ function Promos() {
 
   return (
     <div className='promosContainer'>
-      {data
-        .sort((a, b) => a.order - b.order)
-        .map(item => (
-          <div className={`promo ${item.item}`} key={item._id}>
-            <a className={`${item.item}Image`} />
-            <span className='promoContent'>
-              <span className='subTitle'>{item.subTitle}</span>
-              <span className='title'>{item.title}</span>
-            </span>
-          </div>
-        ))}
+      <div className='promosWrapper'>
+        {data
+          .sort((a, b) => a.order - b.order)
+          .map(item => (
+            <div className={`promo ${item.item}`} key={item._id}>
+              <a className={`${item.item}Image`} />
+              <span className='promoContent'>
+                <span className='subTitle'>{item.subTitle}</span>
+                <span className='title'>{item.title}</span>
+              </span>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

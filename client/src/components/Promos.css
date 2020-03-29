@@ -1,4 +1,10 @@
 .promosContainer {
+  background-color: #ddd;
+  border-top: 1px solid #ddd;
+  box-shadow: inset 0 2px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+.promosWrapper {
   display: grid;
   height: 1000px;
 }
@@ -36,23 +42,27 @@
 }
 
 .martinLutherKing {
-  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/15192BAC-1DD8-B71B-0B9B5E738A5D3E00.jpg?width=640&height=640&mode=crop&quality=90');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url(https://www.nps.gov/common/uploads/grid_builder/crop1_1/15192BAC-1DD8-B71B-0B9B5E738A5D3E00.jpg?.jpg);
 }
 
 .nature {
-  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1149AE35-E5D7-8756-23BFC70EC3F4A21B.jpg?width=640&height=640&mode=crop&quality=90');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1149AE35-E5D7-8756-23BFC70EC3F4A21B.jpg?');
 }
 
 .kids {
-  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/153930E2-1DD8-B71B-0B0DC802FD2E3A55.jpg?width=640&height=640&mode=crop&quality=90');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/153930E2-1DD8-B71B-0B0DC802FD2E3A55.jpg?');
 }
 
 .teachers {
-  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1527DB7C-1DD8-B71B-0B6A5091BCBDDA99.jpg?width=640&height=640&mode=crop&quality=90');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1527DB7C-1DD8-B71B-0B6A5091BCBDDA99.jpg?');
 }
 
 @media screen and (min-width: 765px) and (orientation: portrait) {
-  .promosContainer {
+  .promosWrapper {
     grid-template-columns: repeat(2, 1fr);
     height: 768px;
   }
@@ -65,7 +75,7 @@
 }
 
 @media screen and (min-width: 765px) and (max-width: 1024px) and (orientation: landscape) {
-  .promosContainer {
+  .promosWrapper {
     height: 350px;
     grid-template-columns: repeat(4, 1fr);
   }
@@ -77,11 +87,18 @@
 }
 
 @media (min-width: 1024px) {
-  .promosContainer {
+  .promosWrapper {
     grid-template-columns: repeat(4, 1fr);
     height: 300px;
   }
   .promoContent {
     top: 170px;
+  }
+}
+
+@media (min-width: 1520px) {
+  .promosWrapper {
+    max-width: 1500px;
+    margin: 0 auto;
   }
 }
