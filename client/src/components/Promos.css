@@ -7,6 +7,7 @@
 .promosWrapper {
   display: grid;
   height: 1000px;
+  overflow: hidden;
 }
 
 .promo {
@@ -15,6 +16,12 @@
   background-position: 50% 50%;
   height: 100%;
   position: relative;
+  transition: all 0.15s ease-in-out;
+}
+.promo:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .promoContent {
