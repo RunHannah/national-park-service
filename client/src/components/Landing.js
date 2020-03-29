@@ -4,6 +4,7 @@ import HomepageHero from './HomepageHero';
 import BlogContent from './blogContent';
 import List from './List';
 import Promos from './Promos';
+import SiteSections from './SiteSections';
 
 const landingStyle = {
   height: '100%'
@@ -82,6 +83,7 @@ class Landing extends Component {
         <div style={landingStyle}>
           <HomepageHero selectState={this.selectState} />
           <BlogContent blogData={blogData} />
+          <SiteSections />
           <Promos />
         </div>
       );
