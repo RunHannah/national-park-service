@@ -1,0 +1,87 @@
+.promosContainer {
+  display: grid;
+  height: 1000px;
+}
+
+.promo {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+}
+
+.promoContent {
+  position: absolute;
+  top: 120px;
+  max-width: 65%;
+  margin: 25px;
+  color: #fff;
+  font-weight: 900;
+}
+
+.subTitle {
+  display: block;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  display: block;
+  padding: 7px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.martinLutherKing {
+  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/15192BAC-1DD8-B71B-0B9B5E738A5D3E00.jpg?width=640&height=640&mode=crop&quality=90');
+}
+
+.nature {
+  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1149AE35-E5D7-8756-23BFC70EC3F4A21B.jpg?width=640&height=640&mode=crop&quality=90');
+}
+
+.kids {
+  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/153930E2-1DD8-B71B-0B0DC802FD2E3A55.jpg?width=640&height=640&mode=crop&quality=90');
+}
+
+.teachers {
+  background-image: url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1527DB7C-1DD8-B71B-0B6A5091BCBDDA99.jpg?width=640&height=640&mode=crop&quality=90');
+}
+
+@media screen and (min-width: 765px) and (orientation: portrait) {
+  .promosContainer {
+    grid-template-columns: repeat(2, 1fr);
+    height: 768px;
+  }
+  .promos {
+    height: 650px;
+  }
+  .promoContent {
+    top: 225px;
+  }
+}
+
+@media screen and (min-width: 765px) and (max-width: 1024px) and (orientation: landscape) {
+  .promosContainer {
+    height: 350px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .promoContent {
+    top: 225px;
+    font-weight: 800;
+    /* font-size: 12px; */
+  }
+}
+
+@media (min-width: 1024px) {
+  .promosContainer {
+    grid-template-columns: repeat(4, 1fr);
+    height: 300px;
+  }
+  .promoContent {
+    top: 170px;
+  }
+}

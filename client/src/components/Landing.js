@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import HomepageHero from './HomepageHero';
 import BlogContent from './blogContent';
-import { Route } from 'react-router-dom';
 import List from './List';
+import Promos from './Promos';
 
 const landingStyle = {
   height: '100%'
@@ -81,6 +82,7 @@ class Landing extends Component {
         <div style={landingStyle}>
           <HomepageHero selectState={this.selectState} />
           <BlogContent blogData={blogData} />
+          <Promos />
         </div>
       );
     }
