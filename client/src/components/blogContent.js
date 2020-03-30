@@ -2,8 +2,6 @@ import React from 'react';
 import './blogContent.css';
 
 function BlogContent({ blogData }) {
-  console.log('blogData', blogData);
-
   return (
     <div className='blogContainer'>
       <div className='blogList'>
