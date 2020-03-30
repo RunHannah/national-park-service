@@ -22,8 +22,8 @@ class Header extends Component {
     let { menuOpen, screenWidth } = this.state;
 
     return (
-      <div className='container'>
-        <div className='header'>
+      <div className='headerContainer'>
+        <div className='headerWrapper'>
           <a href='www.nps.gov' className='headerStyle'>
             National Park Service
           </a>

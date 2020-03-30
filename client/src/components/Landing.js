@@ -5,10 +5,7 @@ import BlogContent from './blogContent';
 import List from './List';
 import Promos from './Promos';
 import SiteSections from './SiteSections';
-
-const landingStyle = {
-  height: '100%'
-};
+import './Landing.css';
 
 class Landing extends Component {
   constructor(props) {
@@ -80,7 +77,7 @@ class Landing extends Component {
 
     if (blogData) {
       return (
-        <div style={landingStyle}>
+        <div className='landingContainer'>
           <HomepageHero selectState={this.selectState} />
           <BlogContent blogData={blogData} />
           <SiteSections />
