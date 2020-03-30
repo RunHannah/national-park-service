@@ -9,9 +9,9 @@ function SiteSections() {
           Discover America's Story: The National Parks
         </h2>
         <div className='siteButtons'>
-          <a>Plan Your Visit</a>
-          <a>Learn & Explore</a>
-          <a>Get Involved</a>
+          <button>Plan Your Visit</button>
+          <button>Learn & Explore</button>
+          <button>Get Involved</button>
         </div>
       </div>
       <div className='findYourPark'>

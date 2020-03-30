@@ -12,7 +12,7 @@ function HomepageHero(props) {
               COMMEMORATING WOMEN IN CIVIC ENGAGEMENT
             </span>
             <h2 className='contentSubtitle'>Women's History Month</h2>
-            <a className='contentButton'>Explore History</a>
+            <button className='contentButton'>Explore History</button>
           </div>
         </div>
         <SearchForm selectState={props.selectState} />

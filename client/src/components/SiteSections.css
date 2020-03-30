@@ -30,7 +30,7 @@
   margin: 20px 0;
 }
 
-.siteButtons a {
+.siteButtons button {
   transition: background-color 0.3s ease;
   display: block;
   background-color: #4b5e26;
@@ -43,6 +43,8 @@
   position: relative;
   text-transform: uppercase;
   width: 220px;
+  color: #fff;
+  font-size: 1em;
 }
 
 .siteButton:hover {
