@@ -24,7 +24,7 @@ class Header extends Component {
     return (
       <div className='headerContainer'>
         <div className='headerWrapper'>
-          <a href='www.nps.gov' className='headerStyle'>
+          <a href='#' className='headerStyle'>
             National Park Service
           </a>
           <button className='button' onClick={this.toggleMenu}>

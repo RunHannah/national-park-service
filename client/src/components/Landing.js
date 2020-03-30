@@ -63,6 +63,7 @@ class Landing extends Component {
 
   render() {
     const { blogData, isLoading, stateParksData } = this.state;
+    console.log('isLoading', isLoading);
 
     if (!isLoading && stateParksData.length > 0) {
       let { stateParksData } = this.state;

@@ -12,8 +12,12 @@ function Footer() {
         <div className='govLinks'>
           <div className='parkLinks'>
             <div className='agency'>
-              <a className='npsTitle'>National Park Service</a>
-              <a className='doiTitle'>U.S. Department of the Interior</a>
+              <a className='npsTitle' href='#'>
+                National Park Service
+              </a>
+              <a className='doiTitle' href='#'>
+                U.S. Department of the Interior
+              </a>
             </div>
             <img
               className='footerLogo'
@@ -22,27 +26,27 @@ function Footer() {
           </div>
           <div className='policyLinks'>
             <div className='linksOne'>
-              <a>Accessibility</a>
-              <a>Privacy Policy</a>
-              <a>FOIA</a>
-              <a>Notices</a>
-              <a>Disclaimer</a>
+              <a href='#'>Accessibility</a>
+              <a href='#'>Privacy Policy</a>
+              <a href='#'>FOIA</a>
+              <a href='#'>Notices</a>
+              <a href='#'>Disclaimer</a>
             </div>
             <div className='linksTwo'>
-              <a>faq</a>
-              <a>No Fear Act</a>
-              <a>Contact Us</a>
-              <a>usa.gov</a>
+              <a href='#'>faq</a>
+              <a href='#'>No Fear Act</a>
+              <a href='#'>Contact Us</a>
+              <a href='#'>usa.gov</a>
             </div>
           </div>
         </div>
         <div className='socialMediaLinks'>
-          <a>facebook</a>
-          <a>youtube</a>
-          <a>twitter</a>
-          <a>instagram</a>
-          <a>flickr</a>
-          <a>itunes</a>
+          <a href='#'>facebook</a>
+          <a href='#'>youtube</a>
+          <a href='#'>twitter</a>
+          <a href='#'>instagram</a>
+          <a href='#'>flickr</a>
+          <a href='#'>itunes</a>
         </div>
       </div>
     </div>

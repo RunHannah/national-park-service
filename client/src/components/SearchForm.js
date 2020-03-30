@@ -69,7 +69,7 @@ class SearchForm extends Component {
         </div>
         <div>
           <p>
-            <a className='linkStyle advancedSearch' href='nps.gov'>
+            <a className='linkStyle advancedSearch' href='#'>
               See All Parks & Search By Map
             </a>
           </p>

@@ -37,9 +37,9 @@
   transition: all 0.15s ease-out;
 }
 
-button:hover {
+/* button:hover {
   cursor: pointer;
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
-}
+} */

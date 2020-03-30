@@ -22,7 +22,7 @@ class NavMobile extends Component {
       <ul>
         {showListItems.map(item => (
           <li key={item.service}>
-            <a>
+            <a href='#'>
               <span>{item.service}</span>
             </a>
           </li>
@@ -38,13 +38,13 @@ class NavMobile extends Component {
       <div className='navMobileContainer'>
         <ul className='navList'>
           <li onClick={this.handleOnClick.bind(this, 0)}>
-            <a>
+            <a href='#'>
               <span>Text</span>
             </a>
             {isListOpen && menuIndex === 0 ? this.showList() : null}
           </li>
           <li onClick={this.handleOnClick.bind(this, 1)}>
-            <a>
+            <a href='#'>
               <span>Text</span>
             </a>
             {isListOpen && menuIndex === 1 ? this.showList() : null}
