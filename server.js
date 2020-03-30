@@ -47,9 +47,13 @@ app.get('/promos', async (req, res) => {
 });
 
 app.get('/parks', async (req, res) => {
+  const state = req.query.state;
+
   try {
     await axios
-      .get(`${config.BASE_URL}/${config.BASE_PARAMS}&api_key=${config.API_KEY}`)
+      .get(
+        `${config.BASE_URL}/${config.BASE_PARAMS}${state}&api_key=${config.API_KEY}`
+      )
       .then(response => {
         res.json(response.data);
       });
