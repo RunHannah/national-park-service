@@ -14,8 +14,7 @@ class Landing extends Component {
       data: [],
       stateValue: '',
       isLoading: true,
-      blogData: [],
-      stateParksData: []
+      blogData: []
     };
   }
 
@@ -26,52 +25,32 @@ class Landing extends Component {
         console.log('data', data);
         this.setState({ blogData: data });
       });
-
-    await fetch('http://localhost:5000/parks')
-      .then(response => response.json())
-      .then(data => {
-        console.log('PARK DATA', data);
-        this.setState({ data: data.data, isLoading: false });
-      });
   }
 
-  // callApi = async state => {
-  //   const response = await fetch(`http://localhost:5000?state=${state}`);
-  //   const body = await response.json();
+  callApi = async state => {
+    const response = await fetch(`http://localhost:5000/parks?state=${state}`);
+    const body = await response.json();
 
-  //   if (response.status !== 200) throw Error(body.message);
-
-  //   this.setState({
-  //     data: body.data,
-  //     loading: false
-  //   });
-  // };
+    if (response.status !== 200) throw Error(body.message);
+    this.setState({
+      data: body.data,
+      isLoading: false
+    });
+  };
 
   selectState = state => {
     this.setState({ stateValue: state });
-    // this.callApi(state);
-    this.filterParks(state);
-  };
-
-  filterParks = state => {
-    const { data } = this.state;
-    let filteredData = [];
-
-    filteredData = data.filter(obj => obj.states === state);
-    this.setState({ stateParksData: filteredData });
+    this.callApi(state);
   };
 
   render() {
-    const { blogData, isLoading, stateParksData } = this.state;
-    console.log('isLoading', isLoading);
+    const { blogData, isLoading, data } = this.state;
 
-    if (!isLoading && stateParksData.length > 0) {
-      let { stateParksData } = this.state;
-
+    if (!isLoading && data.length > 0) {
       return (
         <Route
           path='/state/:state'
-          render={props => <List data={stateParksData} {...props} />}
+          render={props => <List data={data} {...props} />}
         />
       );
     }
