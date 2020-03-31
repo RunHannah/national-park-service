@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Route } from 'react-router-dom';
 import HomepageHero from './HomepageHero';
 import BlogContent from './blogContent';
 import List from './List';
 import Promos from './Promos';
 import SiteSections from './SiteSections';
+import Loading from './Loading';
 import './Landing.css';
 
 class Landing extends Component {
@@ -13,7 +15,7 @@ class Landing extends Component {
     this.state = {
       data: [],
       stateValue: '',
-      isLoading: true,
+      isLoading: false,
       blogData: []
     };
   }
@@ -28,6 +30,7 @@ class Landing extends Component {
   }
 
   callApi = async state => {
+    this.setState({ isLoading: true });
     const response = await fetch(`http://localhost:5000/parks?state=${state}`);
     const body = await response.json();
 
@@ -45,6 +48,10 @@ class Landing extends Component {
 
   render() {
     const { blogData, isLoading, data } = this.state;
+
+    if (isLoading) {
+      return <Loading />;
+    }
 
     if (!isLoading && data.length > 0) {
       return (
