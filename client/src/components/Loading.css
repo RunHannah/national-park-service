@@ -5,12 +5,6 @@
   position: relative;
 }
 
-/* @media (min-device-width: 667px) and (max-device-width: 812px) and (orientation: landscape) {
-    .loadingContainer {
-        min-height: calc(100vh - 275px)
-    }
-} */
-
 @media (min-width: 768px) {
   .loadingContainer {
     min-height: calc(100vh - 55px - 275px);
