@@ -16,7 +16,9 @@ class Landing extends Component {
       data: [],
       stateValue: '',
       isLoading: false,
-      blogData: []
+      blogData: [],
+      mapData: {},
+      apiToken: ''
     };
   }
 
@@ -41,13 +43,26 @@ class Landing extends Component {
     });
   };
 
+  callMap = async state => {
+    const response = await fetch(`http://localhost:5000/map?location=${state}`);
+    const body = await response.json();
+
+    console.log('body', body);
+
+    if (response.status !== 200) throw Error(body.message);
+    this.setState({
+      mapData: body.data
+    });
+  };
+
   selectState = state => {
     this.setState({ stateValue: state });
     this.callApi(state);
+    this.callMap('alabama');
   };
 
   render() {
-    const { blogData, isLoading, data } = this.state;
+    const { blogData, isLoading, data, mapData } = this.state;
 
     if (isLoading) {
       return <Loading />;
@@ -57,7 +72,7 @@ class Landing extends Component {
       return (
         <Route
           path='/state/:state'
-          render={props => <List data={data} {...props} />}
+          render={props => <List data={data} mapData={mapData} {...props} />}
         />
       );
     }

@@ -62,4 +62,23 @@ app.get('/parks', async (req, res) => {
   }
 });
 
+app.get('/map', async (req, res) => {
+  const location = req.query.location;
+  const url =
+    'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
+    location +
+    '.json?access_token=' +
+    process.env.REACT_APP_MAPBOX_API_TOKEN;
+
+  try {
+    await axios.get(url).then(response => {
+      res.json({
+        data: response.data
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.listen(5000, () => console.log('App listening to port 5000'));

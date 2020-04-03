@@ -2,7 +2,7 @@ import React from 'react';
 
 function ListDetail(props) {
   return (
-    <div>
+    <div className='listDetail'>
       <span>{props.fullName}</span>
       <span>{props.states}</span>
       <p>{props.url}</p>

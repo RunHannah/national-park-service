@@ -1,12 +1,12 @@
 .listContainer {
-  min-height: calc(100vh - 55px - 489px);
+  /* min-height: calc(100vh - 55px - 489px);
   overflow: hidden;
-  display: block;
+  display: block; */
   position: relative;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .listContainer {
     min-height: calc(100vh - 55px - 275px);
   }
-}
+} */
