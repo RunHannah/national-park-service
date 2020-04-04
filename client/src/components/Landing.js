@@ -18,44 +18,52 @@ class Landing extends Component {
       isLoading: false,
       blogData: [],
       mapData: {},
-      apiToken: ''
+      apiToken: '',
     };
   }
 
-  async componentDidMount() {
-    await fetch('http://localhost:5000')
-      .then(response => response.json())
-      .then(data => {
-        console.log('data', data);
-        this.setState({ blogData: data });
-      });
+  componentDidMount() {
+    this.callBlogData();
   }
 
-  callApi = async state => {
-    this.setState({ isLoading: true });
-    const response = await fetch(`http://localhost:5000/parks?state=${state}`);
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-    this.setState({
-      data: body.data,
-      isLoading: false
-    });
+  callBlogData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000');
+      this.setState({ blogData: response.data });
+    } catch (error) {
+      throw new Error('Unable to retrieve blog data.');
+    }
   };
 
-  callMap = async state => {
-    const response = await fetch(`http://localhost:5000/map?location=${state}`);
-    const body = await response.json();
-
-    console.log('body', body);
-
-    if (response.status !== 200) throw Error(body.message);
-    this.setState({
-      mapData: body.data
-    });
+  callApi = async (state) => {
+    try {
+      this.setState({ isLoading: true });
+      const response = await axios.get(
+        `http://localhost:5000/parks?state=${state}`
+      );
+      this.setState({
+        data: response.data.data,
+        isLoading: false,
+      });
+    } catch (error) {
+      throw new Error(`Unable to retrieve ${state} parks list.`);
+    }
   };
 
-  selectState = state => {
+  callMap = async (state) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/map?location=${state}`
+      );
+      this.setState({
+        mapData: response.data,
+      });
+    } catch (error) {
+      throw new Error('Unable to retrieve map.');
+    }
+  };
+
+  selectState = (state) => {
     this.setState({ stateValue: state });
     this.callApi(state);
     this.callMap('alabama');
@@ -72,7 +80,7 @@ class Landing extends Component {
       return (
         <Route
           path='/state/:state'
-          render={props => <List data={data} mapData={mapData} {...props} />}
+          render={(props) => <List data={data} mapData={mapData} {...props} />}
         />
       );
     }
