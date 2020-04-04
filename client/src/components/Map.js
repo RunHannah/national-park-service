@@ -8,16 +8,16 @@ class Map extends Component {
   constructor() {
     super();
     this.state = {
-      lng: -86,
-      lat: 32,
-      zoom: 5.3
+      lng: -86.4,
+      lat: 32.7,
+      zoom: 5.1
     };
   }
 
   componentDidMount() {
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/light-v10',
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom
     });
@@ -29,6 +29,9 @@ class Map extends Component {
         zoom: map.getZoom().toFixed(2)
       });
     });
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
   }
 
   render() {
