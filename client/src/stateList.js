@@ -1,254 +1,340 @@
 const stateList = [
   {
-    id: 0,
-    state: 'AL',
-    fullName: 'Alabama'
+    state: 'Alabama',
+    abbreviation: 'AL',
+    latitude: 32.799,
+    longitude: -86.8073,
   },
   {
-    id: 1,
-    state: 'AK',
-    fullName: 'Alaska'
+    state: 'Alaska',
+    abbreviation: 'AK',
+    latitude: 61.385,
+    longitude: -152.2683,
   },
   {
-    id: 2,
-    state: 'AZ',
-    fullName: 'Arizona'
+    state: 'American Samoa',
+    abbreviation: 'AS',
+    latitude: -14.3064,
+    longitude: -170.6961,
   },
   {
-    id: 3,
-    state: 'AR',
-    fullName: 'Arkansas'
+    state: 'Arkansas',
+    abbreviation: 'AR',
+    latitude: 34.9513,
+    longitude: -92.3809,
   },
   {
-    id: 4,
-    state: 'CA',
-    fullName: 'California'
+    state: 'Arizona',
+    abbreviation: 'AZ',
+    latitude: 33.7712,
+    longitude: -111.3877,
   },
   {
-    id: 5,
-    state: 'CO',
-    fullName: 'Colorado'
+    state: 'California',
+    abbreviation: 'CA',
+    latitude: 36.17,
+    longitude: -119.7462,
   },
   {
-    id: 6,
-    state: 'CT',
-    fullName: 'Connecticut'
+    state: 'Colorado',
+    abbreviation: 'CO',
+    latitude: 39.0646,
+    longitude: -105.3272,
   },
   {
-    id: 7,
-    state: 'DE',
-    fullName: 'Delaware'
+    state: 'Connecticut',
+    abbreviation: 'CT',
+    latitude: 41.5834,
+    longitude: -72.7622,
   },
   {
-    id: 8,
-    state: 'FL',
-    fullName: 'Florida'
+    state: 'Delaware',
+    abbreviation: 'DE',
+    latitude: 39.3498,
+    longitude: -75.5148,
   },
   {
-    id: 9,
-    state: 'GA',
-    fullName: 'Georgia'
+    state: 'District of Columbia',
+    abbreviation: 'DC',
+    latitude: 38.8974,
+    longitude: -77.0268,
   },
   {
-    id: 10,
-    state: 'HI',
-    fullName: 'Hawaii'
+    state: 'Florida',
+    abbreviation: 'FL',
+    latitude: 27.8333,
+    longitude: -81.717,
   },
   {
-    id: 11,
-    state: 'ID',
-    fullName: 'Idaho'
+    state: 'Georgia',
+    abbreviation: 'GA',
+    latitude: 32.9866,
+    longitude: -83.6487,
   },
   {
-    id: 12,
-    state: 'IL',
-    fullName: 'Illinois'
+    name: 'Guam',
+    abbreviation: 'GU',
+    latitude: 144.7937,
+    longitude: 13.4443,
   },
   {
-    id: 13,
-    state: 'IN',
-    fullName: 'Indiana'
+    state: 'Hawaii',
+    abbreviation: 'HI',
+    latitude: 21.1098,
+    longitude: -157.5311,
   },
   {
-    id: 14,
-    state: 'IA',
-    fullName: 'Iowa'
+    state: 'Idaho',
+    abbreviation: 'ID',
+    latitude: 44.2394,
+    longitude: -114.5103,
   },
   {
-    id: 15,
-    state: 'KS',
-    fullName: 'Kansas'
+    state: 'Illinois',
+    abbreviation: 'IL',
+    latitude: 40.3363,
+    longitude: -89.0022,
   },
   {
-    id: 16,
-    state: 'KY',
-    fullName: 'Kentucky'
+    state: 'Indiana',
+    abbreviation: 'IN',
+    latitude: 39.8647,
+    longitude: -86.2604,
   },
   {
-    id: 17,
-    state: 'LA',
-    fullName: 'Louisiana'
+    state: 'Iowa',
+    abbreviation: 'IA',
+    latitude: 42.0046,
+    longitude: -93.214,
   },
   {
-    id: 18,
-    state: 'ME',
-    fullName: 'Maine'
+    state: 'Kansas',
+    abbreviation: 'KS',
+    latitude: 38.5111,
+    longitude: -96.8005,
   },
   {
-    id: 19,
-    state: 'MD',
-    fullName: 'Maryland'
+    state: 'Kentucky',
+    abbreviation: 'KY',
+    latitude: 37.669,
+    longitude: -84.6514,
   },
   {
-    id: 20,
-    state: 'MA',
-    fullName: 'Massachusetts'
+    state: 'Louisiana',
+    abbreviation: 'LA',
+    latitude: 31.1801,
+    longitude: -91.8749,
   },
   {
-    id: 21,
-    state: 'MI',
-    fullName: 'Michigan'
+    state: 'Massachusetts',
+    abbreviation: 'MA',
+    latitude: 42.2373,
+    longitude: -71.5314,
   },
   {
-    id: 22,
-    state: 'MN',
-    fullName: 'Minnesota'
+    state: 'Maryland',
+    abbreviation: 'MD',
+    latitude: 39.0724,
+    longitude: -76.7902,
   },
   {
-    id: 23,
-    state: 'MS',
-    fullName: 'Mississippi'
+    state: 'Maine',
+    abbreviation: 'ME',
+    latitude: 44.6074,
+    longitude: -69.3977,
   },
   {
-    id: 24,
-    state: 'MO',
-    fullName: 'Missouri'
+    state: 'Michigan',
+    abbreviation: 'MI',
+    latitude: 43.3504,
+    longitude: -84.5603,
   },
   {
-    id: 25,
-    state: 'MT',
-    fullName: 'Montanta'
+    state: 'Minnesota',
+    abbreviation: 'MN',
+    latitude: 45.7326,
+    longitude: -93.9196,
   },
   {
-    id: 26,
-    state: 'NE',
-    fullName: 'Nebraska'
+    state: 'Missouri',
+    abbreviation: 'MO',
+    latitude: 38.4623,
+    longitude: -92.302,
   },
   {
-    id: 27,
-    state: 'NV',
-    fullName: 'Nevada'
+    state: 'Mississippi',
+    abbreviation: 'MS',
+    latitude: 32.7673,
+    longitude: -89.6812,
   },
   {
-    id: 28,
-    state: 'NH',
-    fullName: 'New Hampshire'
+    state: 'Montana',
+    abbreviation: 'MT',
+    latitude: 46.9048,
+    longitude: -110.3261,
   },
   {
-    id: 29,
-    state: 'NJ',
-    fullName: 'New Jersey'
+    state: 'North Carolina',
+    abbreviation: 'NC',
+    latitude: 35.6411,
+    longitude: -79.8431,
   },
   {
-    id: 30,
-    state: 'NM',
-    fullName: 'New Mexico'
+    state: 'North Dakota',
+    abbreviation: 'ND',
+    latitude: 47.5362,
+    longitude: -99.793,
   },
   {
-    id: 31,
-    state: 'NY',
-    fullName: 'New York'
+    state: 'Nebraska',
+    abbreviation: 'NE',
+    latitude: 41.1289,
+    longitude: -98.2883,
   },
   {
-    id: 32,
-    state: 'NC',
-    fullName: 'North Carolina'
+    state: 'New Hampshire',
+    abbreviation: 'NH',
+    latitude: 43.4108,
+    longitude: -71.5653,
   },
   {
-    id: 33,
-    state: 'ND',
-    fullName: 'North Dakota'
+    state: 'New Jersey',
+    abbreviation: 'NJ',
+    latitude: 40.314,
+    longitude: -74.5089,
   },
   {
-    id: 34,
-    state: 'OH',
-    fullName: 'Ohio'
+    state: 'New Mexico',
+    abbreviation: 'NM',
+    latitude: 34.8375,
+    longitude: -106.2371,
   },
   {
-    id: 35,
-    state: 'OK',
-    fullName: 'Oklahoma'
+    state: 'Nevada',
+    abbreviation: 'NV',
+    latitude: 38.4199,
+    longitude: -117.1219,
   },
   {
-    id: 36,
-    state: 'OR',
-    fullName: 'Oregon'
+    state: 'New York',
+    abbreviation: 'NY',
+    latitude: 42.1497,
+    longitude: -74.9384,
   },
   {
-    id: 37,
-    state: 'PA',
-    fullName: 'Pennsylvania'
+    state: 'Northern Mariana Islands',
+    abbreviation: 'NY',
+    latitude: 13.4443,
+    longitude: 144.7937,
   },
   {
-    id: 38,
-    state: 'RI',
-    fullName: 'Rhode Island'
+    state: 'Ohio',
+    abbreviation: 'OH',
+    latitude: 40.3736,
+    longitude: -82.7755,
   },
   {
-    id: 39,
-    state: 'SC',
-    fullName: 'South Carolina'
+    state: 'Oklahoma',
+    abbreviation: 'OK',
+    latitude: 35.5376,
+    longitude: -96.9247,
   },
   {
-    id: 40,
-    state: 'SD',
-    fullName: 'South Dakota'
+    state: 'Oregon',
+    abbreviation: 'OR',
+    latitude: 44.5672,
+    longitude: -122.1269,
   },
   {
-    id: 41,
-    state: 'TN',
-    fullName: 'Tennessee'
+    state: 'Pennsylvania',
+    abbreviation: 'PA',
+    latitude: 40.5773,
+    longitude: -77.264,
   },
   {
-    id: 42,
-    state: 'TX',
-    fullName: 'Texas'
+    state: 'Puerto Rico',
+    abbreviation: 'PR',
+    latitude: 18.2491,
+    longitude: -66.628,
   },
   {
-    id: 43,
-    state: 'UT',
-    fullName: 'Utah'
+    state: 'Rhode Island',
+    abbreviation: 'RI',
+    latitude: 41.6772,
+    longitude: -71.5101,
   },
   {
-    id: 44,
-    state: 'VT',
-    fullName: 'Vermont'
+    state: 'South Carolina',
+    abbreviation: 'SC',
+    latitude: 33.8191,
+    longitude: -80.9066,
   },
   {
-    id: 45,
-    state: 'VA',
-    fullName: 'Virginia'
+    state: 'South Dakota',
+    abbreviation: 'SD',
+    latitude: 44.2853,
+    longitude: -99.4632,
   },
   {
-    id: 46,
-    state: 'WA',
-    fullName: 'Washington'
+    state: 'Tennessee',
+    abbreviation: 'TN',
+    latitude: 35.7449,
+    longitude: -86.7489,
   },
   {
-    id: 47,
-    state: 'WV',
-    fullName: 'West Virginia'
+    state: 'Texas',
+    abbreviation: 'TX',
+    latitude: 31.106,
+    longitude: -97.6475,
   },
   {
-    id: 48,
-    state: 'WI',
-    fullName: 'Wisconsin'
+    state: 'Utah',
+    abbreviation: 'UT',
+    latitude: 40.1135,
+    longitude: -111.8535,
   },
   {
-    id: 49,
-    state: 'WY',
-    fullName: 'Wyoming'
-  }
+    state: 'Virginia',
+    abbreviation: 'VA',
+    latitude: 37.768,
+    longitude: -78.2057,
+  },
+  {
+    name: 'Virgin Islands',
+    abbreviation: 'VI',
+    latitude: 18.3357,
+    longitude: -64.8963,
+  },
+  {
+    state: 'Vermont',
+    abbreviation: 'VT',
+    latitude: 44.0407,
+    longitude: -72.7093,
+  },
+  {
+    state: 'Washington',
+    abbreviation: 'WA',
+    latitude: 47.3917,
+    longitude: -121.5708,
+  },
+  {
+    state: 'Wisconsin',
+    abbreviation: 'WI',
+    latitude: 44.2563,
+    longitude: -89.6385,
+  },
+  {
+    state: 'West Virginia',
+    abbreviation: 'WV',
+    latitude: 38.468,
+    longitude: -80.9696,
+  },
+  {
+    state: 'Wyoming',
+    abbreviation: 'WY',
+    latitude: 42.7475,
+    longitude: -107.2085,
+  },
 ];
 
 export default stateList;
