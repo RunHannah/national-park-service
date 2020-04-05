@@ -8,7 +8,7 @@ class SearchForm extends Component {
     super(props);
     this.state = {
       displayMenu: false,
-      stateList: stateList
+      stateList: stateList,
     };
   }
 
@@ -20,25 +20,25 @@ class SearchForm extends Component {
     this.setState({ displayMenu: false });
   };
 
-  clickState = state => {
+  clickState = (state) => {
     this.props.selectState(state);
-
     this.setState({
-      displayMenu: !this.state.displayMenu
+      displayMenu: !this.state.displayMenu,
     });
   };
 
   render() {
     const { stateList } = this.state;
+    const stateListSorted = stateList.sort((a, b) => a.name > b.name);
 
-    const stateMenu = stateList.map(item => (
-      <li className='stateItem' key={item.fullName}>
+    const stateMenu = stateListSorted.map((item) => (
+      <li className='stateItem' key={item.name}>
         <Link
           className='stateLink'
-          to={`/state/${item.state}`}
-          onClick={() => this.clickState(`${item.state}`)}
+          to={`/state/${item.abbreviation}`}
+          onClick={() => this.clickState(`${item.name}`)}
         >
-          {item.fullName}
+          {item.name}
         </Link>
       </li>
     ));
@@ -47,7 +47,7 @@ class SearchForm extends Component {
       <div className='formContainer'>
         <div className='findButton'>
           <label>
-            <a className='linkStyle' href='nps.gov' target='_blank'>
+            <a className='linkStyle' href='#'>
               FIND A PARK
             </a>
           </label>
