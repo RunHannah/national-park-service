@@ -8,7 +8,7 @@ const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017/npsBlog';
 const client = new MongoClient(url, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 client.connect((err, client) => {
@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
     postsCollection
       .find({})
       .toArray()
-      .then(response => res.json(response));
+      .then((response) => res.json(response));
   } catch (error) {
     console.log(error);
   }
@@ -40,7 +40,7 @@ app.get('/promos', async (req, res) => {
     promosCollection
       .find({})
       .toArray()
-      .then(response => res.json(response));
+      .then((response) => res.json(response));
   } catch (error) {
     console.log(error);
   }
@@ -54,7 +54,7 @@ app.get('/parks', async (req, res) => {
       .get(
         `${config.BASE_URL}/${config.BASE_PARAMS}${state}&api_key=${config.API_KEY}`
       )
-      .then(response => {
+      .then((response) => {
         res.json(response.data);
       });
   } catch (error) {
@@ -62,18 +62,39 @@ app.get('/parks', async (req, res) => {
   }
 });
 
+// app.get('/map', async (req, res) => {
+//   const location = req.query.location;
+//   const url =
+//     'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
+//     location +
+//     '.json?access_token=' +
+//     process.env.REACT_APP_MAPBOX_API_TOKEN;
+
+//   try {
+//     await axios.get(url).then((response) => {
+//       res.json({
+//         data: response.data,
+//       });
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 app.get('/map', async (req, res) => {
-  const location = req.query.location;
+  const lng = req.query.lng;
+  const lat = req.query.lat;
   const url =
     'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
-    location +
+    lng +
+    ',' +
+    lat +
     '.json?access_token=' +
     process.env.REACT_APP_MAPBOX_API_TOKEN;
 
   try {
-    await axios.get(url).then(response => {
+    await axios.get(url).then((response) => {
       res.json({
-        data: response.data
+        data: response.data,
       });
     });
   } catch (error) {
