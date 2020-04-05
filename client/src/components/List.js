@@ -3,12 +3,12 @@ import ListDetail from './ListDetail';
 import Map from './Map';
 import './List.css';
 
-function List({ data }) {
+function List({ data, stateLng, stateLat }) {
   return (
     <div className='listContainer'>
-      <Map />
+      <Map lng={stateLng} lat={stateLat} />
       <div>
-        {Object.keys(data).map(item => (
+        {Object.keys(data).map((item) => (
           <ListDetail
             key={data[item].id}
             fullName={data[item].fullName}

@@ -7,6 +7,7 @@ import List from './List';
 import Promos from './Promos';
 import SiteSections from './SiteSections';
 import Loading from './Loading';
+import stateList from '../stateList';
 import './Landing.css';
 
 class Landing extends Component {
@@ -15,9 +16,12 @@ class Landing extends Component {
     this.state = {
       data: [],
       stateValue: '',
+      stateLng: 0,
+      stateLat: 0,
+      abbr: '',
       isLoading: false,
       blogData: [],
-      mapData: {},
+      mapData: null,
       apiToken: '',
     };
   }
@@ -50,10 +54,10 @@ class Landing extends Component {
     }
   };
 
-  callMap = async (state) => {
+  callMap = async (lng, lat) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/map?location=${state}`
+        `http://localhost:5000/map?lng=${lng}&lat=${lat}`
       );
       this.setState({
         mapData: response.data,
@@ -63,24 +67,54 @@ class Landing extends Component {
     }
   };
 
+  // selectState = (state) => {
+  //   this.setState({ stateValue: state });
+  //   this.callApi(state);
+  //   this.callMap('alabama');
+  // };
+
   selectState = (state) => {
-    this.setState({ stateValue: state });
-    this.callApi(state);
-    this.callMap('alabama');
+    const stateObject = this.lookupStateObject(state);
+    const stateLng = stateObject[0].longitude;
+    const stateLat = stateObject[0].latitude;
+    const abbr = stateObject[0].abbreviation;
+
+    this.setState({ stateValue: state, stateLng, stateLat, abbr });
+    this.callApi(abbr);
+    this.callMap(stateLng, stateLat);
+  };
+
+  lookupStateObject = (state) => {
+    return stateList.filter((item) => item.name === state);
   };
 
   render() {
-    const { blogData, isLoading, data, mapData } = this.state;
+    const {
+      blogData,
+      isLoading,
+      data,
+      mapData,
+      stateLng,
+      stateLat,
+    } = this.state;
 
     if (isLoading) {
       return <Loading />;
     }
 
-    if (!isLoading && data.length > 0) {
+    if (!isLoading && data.length > 0 && mapData) {
       return (
         <Route
           path='/state/:state'
-          render={(props) => <List data={data} mapData={mapData} {...props} />}
+          render={(props) => (
+            <List
+              data={data}
+              mapData={mapData}
+              stateLng={stateLng}
+              stateLat={stateLat}
+              {...props}
+            />
+          )}
         />
       );
     }

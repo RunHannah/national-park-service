@@ -5,12 +5,12 @@ import './Map.css';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_TOKEN;
 
 class Map extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      lng: -86.4,
-      lat: 32.7,
-      zoom: 5.1
+      lng: props.lng,
+      lat: props.lat,
+      zoom: 5.1,
     };
   }
 
@@ -19,14 +19,14 @@ class Map extends Component {
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/light-v10',
       center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom
+      zoom: this.state.zoom,
     });
 
     map.on('move', () => {
       this.setState({
         lng: map.getCenter().lng.toFixed(4),
         lat: map.getCenter().lat.toFixed(4),
-        zoom: map.getZoom().toFixed(2)
+        zoom: map.getZoom().toFixed(2),
       });
     });
 
@@ -43,7 +43,7 @@ class Map extends Component {
             {this.state.zoom}
           </div>
         </div>
-        <div ref={el => (this.mapContainer = el)} className='mapContainer' />
+        <div ref={(el) => (this.mapContainer = el)} className='mapContainer' />
       </div>
     );
   }
