@@ -76,7 +76,17 @@
     grid-template-columns: 10fr 2fr;
     align-items: center;
   }
-
+  .designation {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .name {
+    font-size: 21px;
+  }
+  .location {
+    font-size: 15px;
+    font-weight: 500;
+  }
   .img {
     width: 100%;
   }
