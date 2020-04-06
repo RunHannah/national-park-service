@@ -69,9 +69,11 @@ class Landing extends Component {
 
   selectState = (state) => {
     const stateObject = this.lookupStateObject(state);
-    const stateLng = stateObject[0].longitude;
-    const stateLat = stateObject[0].latitude;
-    const abbr = stateObject[0].abbreviation;
+    const {
+      longitude: stateLng,
+      latitude: stateLat,
+      abbreviation: abbr,
+    } = stateObject[0];
 
     this.setState({ stateValue: state, stateLng, stateLat, abbr });
     this.callParks(abbr);
