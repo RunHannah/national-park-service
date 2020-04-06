@@ -80,7 +80,7 @@
   text-align: left;
 }
 
-.stateItem a:hover {
+.stateItem span:hover {
   color: #fff;
   background-color: #125d95;
   transition: all 0.15s ease-in-out;

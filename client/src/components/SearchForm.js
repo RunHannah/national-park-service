@@ -47,9 +47,7 @@ class SearchForm extends Component {
       <div className='formContainer'>
         <div className='findButton'>
           <label>
-            <a className='linkStyle' href='#'>
-              FIND A PARK
-            </a>
+            <span className='linkStyle'>FIND A PARK</span>
           </label>
         </div>
         <div className='searchBar'>
@@ -69,9 +67,9 @@ class SearchForm extends Component {
         </div>
         <div>
           <p>
-            <a className='linkStyle advancedSearch' href='#'>
+            <span className='linkStyle advancedSearch'>
               See All Parks & Search By Map
-            </a>
+            </span>
           </p>
         </div>
       </div>
