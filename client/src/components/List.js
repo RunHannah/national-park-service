@@ -3,7 +3,7 @@ import ListDetail from './ListDetail';
 import Map from './Map';
 import './List.css';
 
-function List({ state, data, stateLng, stateLat }) {
+function List({ state, parkData, stateLng, stateLat }) {
   return (
     <div className='listContainer'>
       <Map lng={stateLng} lat={stateLat} />
@@ -15,15 +15,15 @@ function List({ state, data, stateLng, stateLat }) {
         <div className='stateParkList'>
           <h2 className='tag'>Parks</h2>
         </div>
-        {Object.keys(data).map((item) => (
+        {Object.keys(parkData).map((item) => (
           <ListDetail
-            key={data[item].id}
-            designation={data[item].designation}
-            name={data[item].name}
-            addresses={data[item].addresses}
-            description={data[item].description}
-            images={data[item].images}
-            itemData={data[item]}
+            key={parkData[item].id}
+            designation={parkData[item].designation}
+            name={parkData[item].name}
+            addresses={parkData[item].addresses}
+            description={parkData[item].description}
+            images={parkData[item].images}
+            itemData={parkData[item]}
           />
         ))}
       </div>

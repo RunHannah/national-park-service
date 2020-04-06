@@ -14,7 +14,7 @@ class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      parkData: [],
       stateValue: '',
       stateLng: 0,
       stateLat: 0,
@@ -39,14 +39,14 @@ class Landing extends Component {
     }
   };
 
-  callApi = async (state) => {
+  callParks = async (state) => {
     try {
       this.setState({ isLoading: true });
       const response = await axios.get(
         `http://localhost:5000/parks?state=${state}`
       );
       this.setState({
-        data: response.data.data,
+        parkData: response.data.data,
         isLoading: false,
       });
     } catch (error) {
@@ -67,12 +67,6 @@ class Landing extends Component {
     }
   };
 
-  // selectState = (state) => {
-  //   this.setState({ stateValue: state });
-  //   this.callApi(state);
-  //   this.callMap('alabama');
-  // };
-
   selectState = (state) => {
     const stateObject = this.lookupStateObject(state);
     const stateLng = stateObject[0].longitude;
@@ -80,7 +74,7 @@ class Landing extends Component {
     const abbr = stateObject[0].abbreviation;
 
     this.setState({ stateValue: state, stateLng, stateLat, abbr });
-    this.callApi(abbr);
+    this.callParks(abbr);
     this.callMap(stateLng, stateLat);
   };
 
@@ -93,7 +87,7 @@ class Landing extends Component {
       blogData,
       isLoading,
       stateValue,
-      data,
+      parkData,
       mapData,
       stateLng,
       stateLat,
@@ -102,13 +96,13 @@ class Landing extends Component {
     if (isLoading) {
       return <Loading />;
     }
-    if (!isLoading && data.length > 0 && mapData) {
+    if (!isLoading && parkData.length > 0 && mapData) {
       return (
         <Route
           path='/state/:state'
           render={(props) => (
             <List
-              data={data}
+              parkData={parkData}
               mapData={mapData}
               state={stateValue}
               stateLng={stateLng}
