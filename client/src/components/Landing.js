@@ -92,6 +92,7 @@ class Landing extends Component {
     const {
       blogData,
       isLoading,
+      stateValue,
       data,
       mapData,
       stateLng,
@@ -101,7 +102,6 @@ class Landing extends Component {
     if (isLoading) {
       return <Loading />;
     }
-
     if (!isLoading && data.length > 0 && mapData) {
       return (
         <Route
@@ -110,6 +110,7 @@ class Landing extends Component {
             <List
               data={data}
               mapData={mapData}
+              state={stateValue}
               stateLng={stateLng}
               stateLat={stateLat}
               {...props}

@@ -1,3 +1,83 @@
 .listDetail {
   position: relative;
+  display: grid;
+  grid-template-columns: 12fr;
+  border-bottom: 1px solid #cccccc;
+  padding: 17px 7px 23px 15px;
+}
+
+.parkInfo {
+  padding-right: 10px;
+}
+
+.designation {
+  color: #000000;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.name {
+  color: #0f4f7e;
+  font-size: 18px;
+  margin-top: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+}
+
+.location {
+  color: #666666;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 0px;
+}
+
+.description {
+  word-spacing: 1px;
+  line-height: 23px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.img {
+  width: 50%;
+}
+
+@media (max-width: 736px) and (orientation: landscape) {
+  .img {
+    width: 25%;
+  }
+}
+
+/* tablet */
+@media (min-width: 760px) {
+  .listDetail {
+    grid-template-columns: 9fr 3fr;
+    align-items: center;
+  }
+
+  .img {
+    width: 100%;
+    margin-left: auto;
+  }
+}
+
+/* desktop small */
+@media (min-width: 850px) {
+  .img {
+    width: 90%;
+  }
+}
+
+/* desktop */
+@media (min-width: 1200px) {
+  .listDetail {
+    grid-template-columns: 10fr 2fr;
+    align-items: center;
+  }
+
+  .img {
+    width: 100%;
+  }
 }
