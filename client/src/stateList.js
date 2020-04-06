@@ -223,9 +223,9 @@ const stateList = [
   },
   {
     name: 'Northern Mariana Islands',
-    abbreviation: 'NY',
-    latitude: 13.4443,
-    longitude: 144.7937,
+    abbreviation: 'MP',
+    latitude: 15.1063,
+    longitude: 145.7065,
   },
   {
     name: 'Ohio',
