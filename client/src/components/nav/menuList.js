@@ -1,82 +1,82 @@
 const menuList = [
   {
     id: 'planYourVisit',
-    section: 'Plan Your Visit',
+    name: 'Plan Your Visit',
     items: [
       {
-        service: 'Find A park'
+        service: 'Find A park',
       },
       {
-        service: 'Events'
+        service: 'Events',
       },
       {
-        service: 'Passes'
+        service: 'Passes',
       },
       {
-        service: 'Trip Ideas'
-      }
-    ]
+        service: 'Trip Ideas',
+      },
+    ],
   },
   {
     id: 'learnAndExplore',
-    section: 'Learn & Explore',
+    name: 'Learn & Explore',
     items: [
       {
-        service: 'About Us'
+        service: 'About Us',
       },
       {
-        service: 'Discover History'
+        service: 'Discover History',
       },
       {
-        service: 'Explore Nature'
+        service: 'Explore Nature',
       },
       {
-        service: 'Kids'
+        service: 'Kids',
       },
       {
-        service: 'Educators'
+        service: 'Educators',
       },
       {
-        service: 'News'
+        service: 'News',
       },
       {
-        service: 'Photos & Multimedia'
+        service: 'Photos & Multimedia',
       },
       {
-        service: 'Explore by Topic'
-      }
-    ]
+        service: 'Explore by Topic',
+      },
+    ],
   },
   {
     id: 'getInvolved',
-    section: 'Get Involved',
+    name: 'Get Involved',
     items: [
       {
-        service: 'Donate'
+        service: 'Donate',
       },
       {
-        service: 'Partner'
+        service: 'Partner',
       },
       {
-        service: 'Volunteer'
+        service: 'Volunteer',
       },
       {
-        service: 'Work for Us'
+        service: 'Work for Us',
       },
       {
-        service: 'Community Resources'
-      }
-    ]
+        service: 'Community Resources',
+      },
+    ],
   },
   {
     id: 'searchForParks',
-    section: 'image',
+    name: 'image',
     items: [
       {
-        service: 'Search for parks by activity or topic >'
-      }
-    ]
-  }
+        service: 'Search for parks by activity or topic >',
+      },
+    ],
+  },
 ];
 
 export default menuList;
