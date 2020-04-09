@@ -1,15 +1,17 @@
-.navMobileContainer {
-  width: 100%;
-  background-color: #000;
-  max-width: 980px;
-  margin: auto;
-}
+@media (max-width: 1024px) {
+  .navMobileContainer {
+    width: 100%;
+    background-color: #000;
+    max-width: 980px;
+    margin: auto;
+  }
 
-.navList {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 0;
-  list-style-type: none;
-  line-height: 2;
+  .navList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    list-style-type: none;
+    line-height: 2;
+  }
 }

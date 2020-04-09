@@ -5,26 +5,24 @@ import './NavMobile.css';
 class NavMobile extends Component {
   state = {
     menuList: menuList,
-    isListOpen: false,
-    menuIndex: null
+    isItemOpen: false,
+    itemIndex: null,
   };
 
-  handleOnClick = index => {
-    let { isListOpen, menuIndex } = this.state;
-    this.setState({ isListOpen: !isListOpen, menuIndex: index });
+  handleOnClick = (index) => {
+    let { isItemOpen } = this.state;
+    this.setState({ isItemOpen: !isItemOpen, itemIndex: index });
   };
 
-  showList = () => {
-    const { menuList, menuIndex } = this.state;
-    let showListItems = menuList[menuIndex].items;
+  showList = (index) => {
+    const { menuList } = this.state;
+    let showItems = menuList[index].items;
 
     return (
       <ul>
-        {showListItems.map(item => (
+        {showItems.map((item) => (
           <li key={item.service}>
-            <a href='#'>
-              <span>{item.service}</span>
-            </a>
+            <span>{item.service}</span>
           </li>
         ))}
       </ul>
@@ -32,24 +30,18 @@ class NavMobile extends Component {
   };
 
   render() {
-    const { isListOpen, menuIndex } = this.state;
+    const { isItemOpen, itemIndex } = this.state;
 
     return (
       <div className='navMobileContainer'>
-        <ul className='navList'>
-          <li onClick={this.handleOnClick.bind(this, 0)}>
-            <a href='#'>
-              <span>Text</span>
-            </a>
-            {isListOpen && menuIndex === 0 ? this.showList() : null}
-          </li>
-          <li onClick={this.handleOnClick.bind(this, 1)}>
-            <a href='#'>
-              <span>Text</span>
-            </a>
-            {isListOpen && menuIndex === 1 ? this.showList() : null}
-          </li>
-        </ul>
+        {menuList.map((item, index) => {
+          return (
+            <li key={index} onClick={this.handleOnClick.bind(this, index)}>
+              <span>{item.name}</span>
+              {isItemOpen && itemIndex === index ? this.showList(index) : null}
+            </li>
+          );
+        })}
       </div>
     );
   }
