@@ -19,10 +19,10 @@ class NavMobile extends Component {
     let showItems = menuList[index].items;
 
     return (
-      <ul>
+      <ul className='serviceList'>
         {showItems.map((item) => (
-          <li key={item.service}>
-            <span>{item.service}</span>
+          <li className='service' key={item.service}>
+            <span className='serviceName'>{item.service}</span>
           </li>
         ))}
       </ul>
@@ -36,8 +36,12 @@ class NavMobile extends Component {
       <div className='navMobileContainer'>
         {menuList.map((item, index) => {
           return (
-            <li key={index} onClick={this.handleOnClick.bind(this, index)}>
-              <span>{item.name}</span>
+            <li
+              className='item'
+              key={index}
+              onClick={this.handleOnClick.bind(this, index)}
+            >
+              <span className='itemName'>{item.name}</span>
               {isItemOpen && itemIndex === index ? this.showList(index) : null}
             </li>
           );
