@@ -73,7 +73,7 @@ const menuList = [
     name: 'image',
     items: [
       {
-        service: 'Search for parks by activity or topic >',
+        service: 'Search for parks by activity or topic',
       },
     ],
   },

@@ -27,7 +27,7 @@ button:hover {
   width: 100%;
 }
 
-.navList > .list > a {
+.list > span {
   font-size: 20px;
 }
 
@@ -37,6 +37,7 @@ button:hover {
 
 .learnAndExplore {
   width: 34%;
+  border-left: 1px solid #464646;
 }
 
 .learnAndExplore ul {
@@ -46,20 +47,25 @@ button:hover {
   max-height: 150px;
 }
 
-.learnAndExplore .item {
+.learnAndExplore .itemDesktop {
   width: 50%;
 }
 
 .getInvolved {
   width: 22%;
+  border-left: 1px solid #464646;
 }
 
 .searchForParks {
   width: 22%;
 }
 
+.searchForParks > ul > li > span {
+  font-size: 16px;
+}
+
 .list,
-a {
+span {
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -76,6 +82,21 @@ a {
   font-size: 13px;
 }
 
-.item {
+.itemDesktop {
   margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .learnAndExplore > ul {
+    max-height: unset;
+    flex-direction: column;
+  }
+
+  .learnAndExplore .itemDesktop {
+    width: 100%;
+  }
+
+  .list > span {
+    font-size: 17px;
+  }
 }
