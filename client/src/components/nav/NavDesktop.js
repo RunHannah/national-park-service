@@ -15,7 +15,10 @@ class NavDesktop extends Component {
             if (obj.id === 'searchForParks') {
               return (
                 <li className={`list ${obj.id}`} key={obj.id}>
-                  <img src='https://www.nps.gov/common/commonspot/templates/assetsCT/images/globalnav/GlobalNavPromo_GLAC_JacobWFrank_158x94.jpg'></img>
+                  <img
+                    src='https://www.nps.gov/common/commonspot/templates/assetsCT/images/globalnav/GlobalNavPromo_GLAC_JacobWFrank_158x94.jpg'
+                    alt='Plants and mountain silhouetted against Milky Way and starry night sky'
+                  ></img>
                   <ul className='items'>
                     <li className='itemDesktop' key={obj.items[0].service}>
                       <span>{obj.items[0].service}</span>
