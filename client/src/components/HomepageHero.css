@@ -37,14 +37,9 @@
   border-radius: 5px;
   padding: 10px 14px;
   display: inline-block;
-  cursor: pointer;
   font-size: 15px;
   transition: all 0.15s ease-out;
   color: #fff;
-}
-
-.contentButton:hover {
-  cursor: pointer;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

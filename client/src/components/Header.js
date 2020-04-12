@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import NavDesktop from './nav/NavDesktop';
 import NavMobile from './nav/NavMobile';
 import './Header.css';
-import menuList from './nav/menuList';
 
 class Header extends Component {
   constructor() {
@@ -21,13 +20,19 @@ class Header extends Component {
 
   render() {
     let { menuOpen, screenWidth } = this.state;
-    console.log('window.width', window.innerWidth);
     return (
       <div className='headerContainer'>
         <div className='headerWrapper'>
-          <span className='headerStyle'>National Park Service</span>
+          <div className='miniWrapper'>
+            <img
+              className='headerLogo'
+              src='https://www.nps.gov/common/commonspot/templates/assetsCT/images/branding/logo.png'
+              alt='NPS logo'
+            ></img>
+            <span className='headerStyle'>National Park Service</span>
+          </div>
           <button
-            className={'button ' + (menuOpen ? 'active' : '')}
+            className={'headerButton ' + (menuOpen ? 'active' : '')}
             onClick={this.toggleMenu}
           >
             {menuOpen ? 'close' : 'menu'}

@@ -1,8 +1,3 @@
-button:hover {
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
 .navDesktopContainer {
   width: 100%;
   background-color: #000;

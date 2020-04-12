@@ -47,8 +47,9 @@
   font-size: 1em;
 }
 
-.siteButton:hover {
+.siteButtons button:hover {
   cursor: pointer;
+  background-color: #3d4c1f;
 }
 
 .findYourPark {
