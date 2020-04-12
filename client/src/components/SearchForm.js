@@ -13,7 +13,15 @@ class SearchForm extends Component {
   }
 
   showDropdownMenu = () => {
-    this.setState({ displayMenu: true });
+    this.setState({ displayMenu: true }, () => {
+      document.addEventListener('click', this.toggleClosed);
+    });
+  };
+
+  toggleClosed = () => {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.toggleClosed);
+    });
   };
 
   hideDropdownMenu = () => {
