@@ -3,10 +3,15 @@ import ListDetail from './ListDetail';
 import Map from './Map';
 import './List.css';
 
-function List({ state, parkData, stateLng, stateLat }) {
+function List({ state, parkData, stateLng, stateLat, mapData }) {
   return (
     <div className='listContainer'>
-      <Map lng={stateLng} lat={stateLat} />
+      <Map
+        mapData={mapData}
+        lng={stateLng}
+        lat={stateLat}
+        parkData={parkData}
+      />
       <div className='listDetailContainer'>
         <div className='listHeader'>
           <h3 className='crumbs'>NPS.gov / Find A Park / {state}</h3>
