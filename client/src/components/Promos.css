@@ -83,7 +83,7 @@
   }
 }
 
-@media screen and (min-width: 765px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-screen-width: 765px) and (max-screen-width: 1024px) and (orientation: landscape) {
   .promosWrapper {
     height: 350px;
     grid-template-columns: repeat(4, 1fr);
@@ -94,7 +94,14 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 990px) {
+  .promosWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 640px;
+  }
+}
+
+@media (min-width: 991px) {
   .promosWrapper {
     grid-template-columns: repeat(4, 1fr);
     height: 300px;
