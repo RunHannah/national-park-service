@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (min-width: 320px) {
   .navMobileContainer {
     width: 100%;
     background-color: #000;
@@ -56,5 +56,17 @@
   .service:hover {
     text-decoration: underline;
     background: #282828;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navMobileContainer {
+    max-width: 980px;
+    width: 100%;
+  }
+
+  .item {
+    margin: 0;
+    background: #000;
   }
 }

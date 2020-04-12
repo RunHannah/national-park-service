@@ -35,5 +35,10 @@
   border-bottom: none;
   font-size: 13px;
   font-weight: 700;
+  text-transform: uppercase;
   /* transition: all 0.15s ease-out; */
+}
+
+.button:focus {
+  outline: none;
 }
