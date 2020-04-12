@@ -48,8 +48,17 @@
   transition: all 0.15s ease-out;
 }
 
-.headerButton:hover {
+.headerButton > svg {
+  padding-right: 5px;
+}
+
+.headerButton > span:hover {
   cursor: pointer;
+}
+
+.headerButton.active {
+  background: #333;
+  transition: all 0.15s ease-out;
 }
 
 button:focus {

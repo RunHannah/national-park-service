@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import NavDesktop from './nav/NavDesktop';
 import NavMobile from './nav/NavMobile';
 import './Header.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends Component {
   constructor() {
@@ -20,6 +22,19 @@ class Header extends Component {
 
   render() {
     let { menuOpen, screenWidth } = this.state;
+    let buttonClose = (
+      <span>
+        <FontAwesomeIcon icon={faTimes} />
+        close
+      </span>
+    );
+    let buttonOpen = (
+      <span>
+        <FontAwesomeIcon icon={faBars} />
+        menu
+      </span>
+    );
+
     return (
       <div className='headerContainer'>
         <div className='headerWrapper'>
@@ -35,7 +50,7 @@ class Header extends Component {
             className={'headerButton ' + (menuOpen ? 'active' : '')}
             onClick={this.toggleMenu}
           >
-            {menuOpen ? 'close' : 'menu'}
+            {menuOpen ? buttonClose : buttonOpen}
           </button>
         </div>
         {menuOpen && screenWidth < 1024 ? (
