@@ -31,8 +31,6 @@ class NavMobile extends Component {
 
   render() {
     const { isItemOpen, itemIndex } = this.state;
-    console.log('navMobiel menuOpen', this.props.menuOpen);
-
     return (
       <div
         className={
