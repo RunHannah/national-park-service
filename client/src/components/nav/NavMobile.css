@@ -5,6 +5,7 @@
     max-width: 980px;
     margin: auto;
     list-style: none;
+    /* transition: all 0.5s ease; */
   }
 
   .navMobileContainer > .item:nth-of-type(4) {

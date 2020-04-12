@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavDesktop from './nav/NavDesktop';
 import NavMobile from './nav/NavMobile';
 import './Header.css';
+import menuList from './nav/menuList';
 
 class Header extends Component {
   constructor() {
@@ -25,14 +26,17 @@ class Header extends Component {
       <div className='headerContainer'>
         <div className='headerWrapper'>
           <span className='headerStyle'>National Park Service</span>
-          <button className='button' onClick={this.toggleMenu}>
+          <button
+            className={'button ' + (menuOpen ? 'active' : '')}
+            onClick={this.toggleMenu}
+          >
             {menuOpen ? 'close' : 'menu'}
           </button>
         </div>
         {menuOpen && screenWidth < 1024 ? (
-          <NavMobile />
+          <NavMobile menuOpen />
         ) : menuOpen && screenWidth >= 1024 ? (
-          <NavDesktop />
+          <NavDesktop menuOpen />
         ) : null}
       </div>
     );
