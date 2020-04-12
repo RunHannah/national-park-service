@@ -62,7 +62,8 @@ class Map extends Component {
         new mapboxgl.Marker(el)
           .setLngLat(coordArr)
           .setPopup(
-            new mapboxgl.Popup({ offset: 25 }) // add popups
+            new mapboxgl.Popup({ offset: 25, className: 'popupBox' }) // add popups
+              .setLngLat(coordArr)
               .setHTML(
                 '<h3>' +
                   marker.fullName +
@@ -70,6 +71,7 @@ class Map extends Component {
                   marker.description +
                   '</p>'
               )
+              .setMaxWidth('350px')
           )
           .addTo(map);
       }
