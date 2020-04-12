@@ -59,7 +59,19 @@ class Map extends Component {
         coordArr.push(marker.latitude);
 
         // add marker to map
-        new mapboxgl.Marker(el).setLngLat(coordArr).addTo(map);
+        new mapboxgl.Marker(el)
+          .setLngLat(coordArr)
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                '<h3>' +
+                  marker.fullName +
+                  '</h3><p>' +
+                  marker.description +
+                  '</p>'
+              )
+          )
+          .addTo(map);
       }
     });
   }

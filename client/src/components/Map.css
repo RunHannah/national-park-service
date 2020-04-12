@@ -29,6 +29,39 @@
   display: block;
   border: none;
   border-radius: 50%;
-  /* cursor: pointer; */
+  cursor: pointer;
   padding: 0;
+}
+
+.mapboxgl-popup-content {
+  background: #f9f7f1;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+  border: 1px solid #bdbbb1;
+  pointer-events: auto;
+  text-align: left;
+}
+
+.mapboxgl-popup-content > h3 {
+  color: #d29700;
+}
+.mapboxgl-popup-content > button {
+  background: #d29700;
+  border-radius: 90%;
+  color: #fff;
+  font-family: Arial;
+  height: 21px;
+  line-height: 21px;
+  padding: 0;
+  pointer-events: auto;
+  position: absolute;
+  right: -9px;
+  text-align: center;
+  top: -10px;
+  width: 21px;
+}
+
+.mapboxgl-popup-content > button:hover {
+  background-color: #8f8f7d;
+  color: #fff;
+  text-decoration: none;
 }
