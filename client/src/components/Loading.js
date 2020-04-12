@@ -4,7 +4,9 @@ import './Loading.css';
 function Loading() {
   return (
     <div className='loadingContainer'>
-      <h1>Loading...</h1>
+      <span>
+        <i className='fa fa-spinner fa-pulse' />
+      </span>
     </div>
   );
 }

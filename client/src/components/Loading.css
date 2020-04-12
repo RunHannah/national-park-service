@@ -3,10 +3,18 @@
   overflow: hidden;
   display: block;
   position: relative;
+  font-size: 35px;
+}
+
+.loadingContainer > span {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 @media (min-width: 768px) {
   .loadingContainer {
     min-height: calc(100vh - 55px - 275px);
+    font-size: 65px;
   }
 }
