@@ -25,6 +25,12 @@ class Landing extends Component {
     };
   }
 
+  componentDidUpdate() {
+    window.onpopstate = (e) => {
+      window.location.reload(false);
+    };
+  }
+
   componentDidMount() {
     this.callBlogData();
   }
