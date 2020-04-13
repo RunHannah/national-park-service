@@ -52,7 +52,7 @@ class Map extends Component {
         el.style.fontSize = '11px';
         el.style.color = '#4b5e26';
         el.style.textTransform = 'uppercase';
-        el.style.fontWeight = 400;
+        el.style.fontWeight = 700;
 
         let coordArr = [];
         coordArr.push(marker.longitude);
