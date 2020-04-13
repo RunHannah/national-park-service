@@ -12,6 +12,10 @@ class SearchForm extends Component {
     };
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('click', this.toggleClosed);
+  }
+
   showDropdownMenu = () => {
     this.setState({ displayMenu: true }, () => {
       document.addEventListener('click', this.toggleClosed);
@@ -19,24 +23,15 @@ class SearchForm extends Component {
   };
 
   toggleClosed = () => {
-    this.setState({ displayMenu: false }, () => {
-      document.removeEventListener('click', this.toggleClosed);
-    });
-  };
-
-  hideDropdownMenu = () => {
     this.setState({ displayMenu: false });
   };
 
   clickState = (state) => {
     this.props.selectState(state);
-    this.setState({
-      displayMenu: !this.state.displayMenu,
-    });
   };
 
   render() {
-    const { stateList } = this.state;
+    const { stateList, displayMenu } = this.state;
     const stateListSorted = stateList.sort((a, b) => a.name > b.name);
 
     const stateMenu = stateListSorted.map((item) => (
@@ -61,17 +56,11 @@ class SearchForm extends Component {
         <div className='searchBar'>
           <button
             className='searchButton'
-            onClick={
-              !this.state.displayMenu
-                ? this.showDropdownMenu
-                : this.hideDropdownMenu
-            }
+            onClick={!displayMenu ? this.showDropdownMenu : null}
           >
             By State...
           </button>
-          {this.state.displayMenu ? (
-            <ul className='dropdownMenu'>{stateMenu}</ul>
-          ) : null}
+          {displayMenu ? <ul className='dropdownMenu'>{stateMenu}</ul> : null}
         </div>
         <div>
           <p>

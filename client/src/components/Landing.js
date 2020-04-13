@@ -22,7 +22,6 @@ class Landing extends Component {
       isLoading: false,
       blogData: [],
       mapData: null,
-      apiToken: '',
     };
   }
 
