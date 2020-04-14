@@ -12,6 +12,12 @@
   margin-top: 5%;
 }
 
+.loadingContainer > p {
+  font-size: 14px;
+  padding-top: 20px;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .loadingContainer {
     min-height: calc(100vh - 55px - 275px);

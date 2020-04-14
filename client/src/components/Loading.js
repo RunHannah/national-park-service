@@ -7,6 +7,7 @@ function Loading() {
       <span>
         <i className='fa fa-spinner fa-pulse' />
       </span>
+      <p>May take up to 30-40 seconds to load results...</p>
     </div>
   );
 }
