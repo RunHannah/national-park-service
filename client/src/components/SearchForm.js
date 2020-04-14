@@ -24,6 +24,7 @@ class SearchForm extends Component {
 
   toggleClosed = () => {
     this.setState({ displayMenu: false });
+    document.removeEventListener('click', this.toggleClosed);
   };
 
   clickState = (state) => {
@@ -54,10 +55,7 @@ class SearchForm extends Component {
           </label>
         </div>
         <div className='searchBar'>
-          <button
-            className='searchButton'
-            onClick={!displayMenu ? this.showDropdownMenu : null}
-          >
+          <button className='searchButton' onClick={this.showDropdownMenu}>
             By State...
           </button>
           {displayMenu ? <ul className='dropdownMenu'>{stateMenu}</ul> : null}
