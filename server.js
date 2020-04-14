@@ -62,24 +62,6 @@ app.get('/parks', async (req, res) => {
   }
 });
 
-// app.get('/map', async (req, res) => {
-//   const location = req.query.location;
-//   const url =
-//     'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
-//     location +
-//     '.json?access_token=' +
-//     process.env.REACT_APP_MAPBOX_API_TOKEN;
-
-//   try {
-//     await axios.get(url).then((response) => {
-//       res.json({
-//         data: response.data,
-//       });
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
 app.get('/map', async (req, res) => {
   const lng = req.query.lng;
   const lat = req.query.lat;
