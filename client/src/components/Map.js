@@ -32,11 +32,8 @@ class Map extends Component {
       });
     });
 
-    console.log('this.stata.mapData', this.state.mapData);
-    console.log('this.stata.parkData', this.state.parkData);
-
     //Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
     // add markers to map
     this.state.parkData.forEach(function (marker) {
@@ -81,12 +78,6 @@ class Map extends Component {
   render() {
     return (
       <div className='map'>
-        <div className='sidebarStyle'>
-          <div>
-            Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom:{' '}
-            {this.state.zoom}
-          </div>
-        </div>
         <div ref={(el) => (this.mapContainer = el)} className='mapContainer' />
       </div>
     );
