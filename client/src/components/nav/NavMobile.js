@@ -15,7 +15,7 @@ class NavMobile extends Component {
   };
 
   showList = (index) => {
-    const { menuList, isItemOpen } = this.state;
+    const { menuList } = this.state;
     let showItems = menuList[index].items;
 
     return (
