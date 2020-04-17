@@ -3,7 +3,17 @@
   background-color: #000;
   max-width: 980px;
   margin: auto;
+  /* display: none; */
+  /* transition: all 0.3s ease; */
 }
+
+/* .navDesktopContainer.open {
+  display: block;
+}
+
+.navDesktopContainer.closed {
+  display: none;
+} */
 
 .navDesktopList {
   display: flex;
@@ -13,6 +23,7 @@
   padding: 0;
   list-style-type: none;
   line-height: 2;
+  margin: 0;
 }
 
 .list {

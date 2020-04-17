@@ -46,18 +46,19 @@ class Header extends Component {
             ></img>
             <span className='headerStyle'>National Park Service</span>
           </div>
-          <button
-            className={'headerButton ' + (menuOpen ? 'active' : '')}
-            onClick={this.toggleMenu}
-          >
+          <button className='headerButton' onClick={this.toggleMenu}>
             {menuOpen ? buttonClose : buttonOpen}
           </button>
         </div>
-        {menuOpen && screenWidth < 1024 ? (
-          <NavMobile menuOpen />
-        ) : menuOpen && screenWidth >= 1024 ? (
-          <NavDesktop menuOpen />
-        ) : null}
+        <div
+          className={'dropdown ' + (this.state.menuOpen ? 'open' : 'closed')}
+        >
+          {screenWidth < 1024 ? (
+            <NavMobile menuOpen={this.state.menuOpen} />
+          ) : screenWidth >= 1024 ? (
+            <NavDesktop menuOpen={this.state.menuOpen} />
+          ) : null}
+        </div>
       </div>
     );
   }

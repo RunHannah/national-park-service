@@ -8,13 +8,14 @@ class NavDesktop extends Component {
   };
 
   render() {
+    console.log('this.props.menuOpen', this.props.menuOpen);
     return (
-      <div className='navDesktopContainer'>
-        <ul
-          className={
-            'navDesktopList ' + (this.props.menuOpen ? 'open' : 'closed')
-          }
-        >
+      <div
+        className={
+          'navDesktopContainer ' + (this.props.menuOpen ? 'open' : 'closed')
+        }
+      >
+        <ul className='navDesktopList'>
           {this.state.menuList.map((obj) => {
             if (obj.id === 'searchForParks') {
               return (
