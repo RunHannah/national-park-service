@@ -15,7 +15,7 @@ class NavMobile extends Component {
   };
 
   showList = (index) => {
-    const { menuList } = this.state;
+    const { menuList, isItemOpen } = this.state;
     let showItems = menuList[index].items;
 
     return (
@@ -40,7 +40,7 @@ class NavMobile extends Component {
         {menuList.map((item, index) => {
           return (
             <li
-              className='item'
+              className={'item ' + (isItemOpen ? 'active' : '')}
               key={index}
               onClick={this.handleOnClick.bind(this, index)}
             >

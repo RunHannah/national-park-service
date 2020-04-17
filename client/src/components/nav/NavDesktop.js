@@ -8,7 +8,6 @@ class NavDesktop extends Component {
   };
 
   render() {
-    console.log('this.props.menuOpen', this.props.menuOpen);
     return (
       <div
         className={
