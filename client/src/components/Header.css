@@ -7,20 +7,21 @@
   background-color: #000;
   position: relative;
   margin-top: 0px;
-  height: 0px;
+  max-height: 0;
   opacity: 0.5;
   transition: all 0.3s ease;
 }
 
 .dropdown.open {
   margin-top: 20px;
-  height: 230px;
+  max-height: 348px;
+  height: 100%;
   opacity: 1;
 }
 
 .dropdown.closed {
   margin-top: 0px;
-  height: 0;
+  max-height: 0;
   opacity: 0.5;
 }
 
