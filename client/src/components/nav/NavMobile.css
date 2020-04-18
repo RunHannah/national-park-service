@@ -5,6 +5,12 @@
     max-width: 980px;
     margin: auto;
     list-style: none;
+    display: none;
+    transition: all 0.3s ease;
+  }
+
+  .navMobileContainer.open {
+    display: block;
   }
 
   .navMobileContainer > .item:nth-of-type(4) {

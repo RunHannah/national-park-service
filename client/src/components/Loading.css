@@ -4,6 +4,7 @@
   display: block;
   position: relative;
   font-size: 35px;
+  background-color: #fff;
 }
 
 .loadingContainer > span {
