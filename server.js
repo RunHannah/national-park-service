@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const config = require('./config');
+const npsApi_config = require('./config/npsApi_config');
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 
@@ -53,7 +53,7 @@ app.get('/parks', async (req, res) => {
   try {
     await axios
       .get(
-        `${config.BASE_URL}/${config.BASE_PARAMS}${state}&api_key=${config.API_KEY}`
+        `${npsApi_config.BASE_URL}/${npsApi_config.BASE_PARAMS}${state}&api_key=${npsApi_config.API_KEY}`
       )
       .then((response) => {
         res.json(response.data);
