@@ -3,13 +3,14 @@ import ListDetail from './ListDetail';
 import Map from './Map';
 import './List.css';
 
-function List({ state, parkData, stateLng, stateLat, mapData }) {
+function List({ state, parkData, stateLng, stateLat, mapZoom, mapData }) {
   return (
     <div className='listContainer'>
       <Map
         mapData={mapData}
         lng={stateLng}
         lat={stateLat}
+        zoom={mapZoom}
         parkData={parkData}
       />
       <div className='listDetailContainer'>

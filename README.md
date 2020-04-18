@@ -21,7 +21,7 @@ View a list of national parks, national monuments, and other natural and cultura
 #### Technologies Used
 
 ```
-Application: React, Node.js, Express
+Application: React, Node.js, Express, JavaScript, HTML, CSS
 Database: MongoDB
 APIs: National Park Service, Mapbox
 License: MIT License

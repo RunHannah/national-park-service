@@ -16,7 +16,7 @@ function SiteSections() {
       </div>
       <div className='findYourPark'>
         <img
-          src='./images/findYourPark.png'
+          src='/images/findYourPark.png'
           alt="Statue of Liberty's crown with Find Your Park text superimposed"
         />
       </div>

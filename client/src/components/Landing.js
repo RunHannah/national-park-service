@@ -18,6 +18,7 @@ class Landing extends Component {
       stateValue: '',
       stateLng: 0,
       stateLat: 0,
+      zoom: 0,
       abbr: '',
       isLoading: false,
       blogData: [],
@@ -78,9 +79,10 @@ class Landing extends Component {
       longitude: stateLng,
       latitude: stateLat,
       abbreviation: abbr,
+      zoom,
     } = stateObject[0];
 
-    this.setState({ stateValue: state, stateLng, stateLat, abbr });
+    this.setState({ stateValue: state, stateLng, stateLat, abbr, zoom });
     this.callParks(abbr);
     this.callMap(stateLng, stateLat);
   };
@@ -98,6 +100,7 @@ class Landing extends Component {
       mapData,
       stateLng,
       stateLat,
+      zoom,
     } = this.state;
 
     if (isLoading) {
@@ -114,6 +117,7 @@ class Landing extends Component {
               state={stateValue}
               stateLng={stateLng}
               stateLat={stateLat}
+              mapZoom={zoom}
               {...props}
             />
           )}
