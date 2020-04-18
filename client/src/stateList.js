@@ -39,7 +39,7 @@ const stateList = [
     abbreviation: 'CA',
     latitude: 36.17,
     longitude: -119.7462,
-    zoom: 5.1,
+    zoom: 4.6,
   },
   {
     name: 'Colorado',
