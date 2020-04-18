@@ -28,7 +28,7 @@
 }
 
 .blogList div:nth-of-type(9) {
-  background-image: url(https://www.nps.gov/common/commonspot/templates/images/promos/npf-blue-bg.jpg);
+  background-image: url('/images/npf-blue-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;

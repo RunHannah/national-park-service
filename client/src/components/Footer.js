@@ -17,7 +17,7 @@ function Footer() {
             </div>
             <img
               className='footerLogo'
-              src='https://www.nps.gov/common/commonspot/templates/assetsCT/images/branding/logo.png'
+              src='/images/logo.png'
               alt='NPS logo'
             ></img>
           </div>

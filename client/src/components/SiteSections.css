@@ -5,7 +5,7 @@
 }
 
 .siteWrapper {
-  background-image: url('https://www.nps.gov/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg');
+  background-image: url('/images/glacierSunset.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;

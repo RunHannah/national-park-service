@@ -51,22 +51,22 @@
 
 .martinLutherKing {
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url(https://www.nps.gov/common/uploads/grid_builder/crop1_1/15192BAC-1DD8-B71B-0B9B5E738A5D3E00.jpg?.jpg);
+    url('/images/martinLutherKing.png');
 }
 
 .nature {
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1149AE35-E5D7-8756-23BFC70EC3F4A21B.jpg?');
+    url('/images/bird.png');
 }
 
 .kids {
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/153930E2-1DD8-B71B-0B0DC802FD2E3A55.jpg?');
+    url('/images/child.png');
 }
 
 .teachers {
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('https://www.nps.gov/common/uploads/grid_builder/crop1_1/1527DB7C-1DD8-B71B-0B6A5091BCBDDA99.jpg?');
+    url('/images/teachers.png');
 }
 
 @media screen and (min-width: 765px) and (orientation: portrait) {

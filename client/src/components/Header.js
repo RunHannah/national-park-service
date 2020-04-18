@@ -41,7 +41,7 @@ class Header extends Component {
           <div className='miniWrapper'>
             <img
               className='headerLogo'
-              src='https://www.nps.gov/common/commonspot/templates/assetsCT/images/branding/logo.png'
+              src='/images/logo.png'
               alt='NPS logo'
             ></img>
             <span className='headerStyle'>National Park Service</span>

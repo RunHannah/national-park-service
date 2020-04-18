@@ -20,7 +20,7 @@ class NavDesktop extends Component {
               return (
                 <li className={`list ${obj.id}`} key={obj.id}>
                   <img
-                    src='https://www.nps.gov/common/commonspot/templates/assetsCT/images/globalnav/GlobalNavPromo_GLAC_JacobWFrank_158x94.jpg'
+                    src='/images/jacobWFrank.png'
                     alt='Plants and mountain silhouetted against Milky Way and starry night sky'
                   ></img>
                   <ul className='items'>

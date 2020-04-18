@@ -5,7 +5,7 @@
   background-size: cover;
   position: relative;
   background-repeat: no-repeat;
-  background-image: url(https://www.nps.gov/common/uploads/hero_home/pwr/promo/56ED3EB8-F05E-2155-F4563FA4940DDC16.jpg?width=2400&height=700&mode=crop&quality=90);
+  background-image: url('/images/heroHome.png');
 }
 
 .content {

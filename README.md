@@ -11,11 +11,11 @@ View a list of national parks, national monuments, and other natural and cultura
 ```
 
 <p align="center">
-    <img src="src/parkSearch.png" style="width: 400px;"/>
+    <img src="readmeImages/parkSearch.png" style="width: 400px;"/>
 </p>
 <br>
 <p align="center">
-    <img src="src/result.png" style="width: 400px;"/>
+    <img src="readmeImages/result.png" style="width: 400px;"/>
 </p>
 
 #### Technologies Used
