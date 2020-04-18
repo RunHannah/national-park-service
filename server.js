@@ -5,8 +5,9 @@ const config = require('./config');
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 
-const url = 'mongodb://localhost:27017/npsBlog';
-const client = new MongoClient(url, {
+const uri = require('./config/keys_dev').mongoURI;
+
+const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
