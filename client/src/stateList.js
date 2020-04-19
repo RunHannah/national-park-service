@@ -74,6 +74,7 @@ const stateList = [
     abbreviation: 'FL',
     latitude: 27.8333,
     longitude: -81.717,
+    zoom: 5.1,
   },
   {
     name: 'Georgia',
