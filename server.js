@@ -1,7 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const npsApi_config = require('./config/npsApi_config');
 const cors = require('cors');
 const path = require('path');
 const MongoClient = require('mongodb').MongoClient;
@@ -24,7 +24,7 @@ client.connect((err, client) => {
 
 app.use(cors());
 
-app.get('/', async (req, res) => {
+app.get('/blogPosts', async (req, res) => {
   try {
     const postsCollection = req.app.locals.postsCollection;
     postsCollection
@@ -50,15 +50,14 @@ app.get('/promos', async (req, res) => {
 
 app.get('/parks', async (req, res) => {
   const state = req.query.state;
+  const url =
+    `https://developer.nps.gov/api/v1/parks?stateCode=${state}&api_key=` +
+    process.env.NPS_API_KEY;
 
   try {
-    await axios
-      .get(
-        `${npsApi_config.BASE_URL}/${npsApi_config.BASE_PARAMS}${state}&api_key=${npsApi_config.API_KEY}`
-      )
-      .then((response) => {
-        res.json(response.data);
-      });
+    await axios.get(url).then((response) => {
+      res.json(response.data);
+    });
   } catch (error) {
     console.log(error);
   }
@@ -68,11 +67,7 @@ app.get('/map', async (req, res) => {
   const lng = req.query.lng;
   const lat = req.query.lat;
   const url =
-    'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
-    lng +
-    ',' +
-    lat +
-    '.json?access_token=' +
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json?access_token=` +
     process.env.REACT_APP_MAPBOX_API_TOKEN;
 
   try {

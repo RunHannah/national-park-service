@@ -38,7 +38,7 @@ class Landing extends Component {
 
   callBlogData = async () => {
     try {
-      const response = await axios.get('/');
+      const response = await axios.get('/blogPosts');
       this.setState({ blogData: response.data });
     } catch (error) {
       throw new Error('Unable to retrieve blog data.');
