@@ -46,7 +46,6 @@ class Landing extends Component {
   };
 
   callParks = async (state) => {
-    console.log('callParks');
     try {
       this.setState({ isLoading: true });
       const response = await axios.get(`/parks?state=${state}`);
@@ -54,20 +53,17 @@ class Landing extends Component {
         parkData: response.data.data,
         isLoading: false,
       });
-      console.log('parks', response.data.data);
     } catch (error) {
       throw new Error(`Unable to retrieve ${state} parks list.`);
     }
   };
 
   callMap = async (lng, lat) => {
-    console.log('callMap');
     try {
       const response = await axios.get(`/map?lng=${lng}&lat=${lat}`);
       this.setState({
         mapData: response.data,
       });
-      console.log('map', response.data);
     } catch (error) {
       throw new Error('Unable to retrieve map.');
     }

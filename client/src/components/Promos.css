@@ -26,7 +26,7 @@
 
 .promoContent {
   position: absolute;
-  top: 120px;
+  top: 170px;
   max-width: 65%;
   margin: 25px;
   color: #fff;
@@ -78,19 +78,8 @@
     height: 650px;
   }
   .promoContent {
-    top: 225px;
+    top: 200px;
     font-size: 18px;
-  }
-}
-
-@media (min-screen-width: 765px) and (max-screen-width: 1024px) and (orientation: landscape) {
-  .promosWrapper {
-    height: 350px;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .promoContent {
-    top: 225px;
-    font-weight: 800;
   }
 }
 
