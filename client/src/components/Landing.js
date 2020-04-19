@@ -38,7 +38,7 @@ class Landing extends Component {
 
   callBlogData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000');
+      const response = await axios.get('/');
       this.setState({ blogData: response.data });
     } catch (error) {
       throw new Error('Unable to retrieve blog data.');
@@ -48,9 +48,7 @@ class Landing extends Component {
   callParks = async (state) => {
     try {
       this.setState({ isLoading: true });
-      const response = await axios.get(
-        `http://localhost:5000/parks?state=${state}`
-      );
+      const response = await axios.get(`/parks?state=${state}`);
       this.setState({
         parkData: response.data.data,
         isLoading: false,
@@ -62,9 +60,7 @@ class Landing extends Component {
 
   callMap = async (lng, lat) => {
     try {
-      const response = await axios.get(
-        `http://localhost:5000/map?lng=${lng}&lat=${lat}`
-      );
+      const response = await axios.get(`/map?lng=${lng}&lat=${lat}`);
       this.setState({
         mapData: response.data,
       });

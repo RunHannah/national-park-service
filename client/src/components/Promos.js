@@ -6,7 +6,7 @@ function Promos() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios('http://localhost:5000/promos');
+      const result = await axios('/promos');
       setData(result.data);
     };
     fetchData();
@@ -17,7 +17,7 @@ function Promos() {
       <div className='promosWrapper'>
         {data
           .sort((a, b) => a.order - b.order)
-          .map(item => (
+          .map((item) => (
             <div className={`promo ${item.item}`} key={item._id}>
               <span className='promoContent'>
                 <span className='subTitle'>{item.subTitle}</span>

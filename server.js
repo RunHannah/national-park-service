@@ -3,9 +3,10 @@ const app = express();
 const axios = require('axios');
 const npsApi_config = require('./config/npsApi_config');
 const cors = require('cors');
+const path = require('path');
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = require('./config/keys_dev').mongoURI;
+const uri = require('./config/keys').mongoURI;
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -85,4 +86,16 @@ app.get('/map', async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log('App listening to port 5000'));
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
