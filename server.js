@@ -54,10 +54,12 @@ app.get('/parks', async (req, res) => {
     `https://developer.nps.gov/api/v1/parks?stateCode=${state}&api_key=` +
     process.env.NPS_API_KEY;
 
+  console.log('parks url', url);
   try {
     await axios.get(url).then((response) => {
       res.json(response.data);
     });
+    console.log('response', res.json(response.data));
   } catch (error) {
     console.log(error);
   }
