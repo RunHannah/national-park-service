@@ -48,6 +48,7 @@
   transition: all 0.3s ease;
   border: 1px solid #ddd;
   box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075);
+  background-color: #e6e6e6;
 }
 
 .searchButton:hover {
