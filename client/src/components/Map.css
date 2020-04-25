@@ -1,6 +1,6 @@
 .map {
   width: 100%;
-  height: 475px;
+  height: 375px;
 }
 
 .sidebarStyle {
@@ -64,4 +64,10 @@
   background-color: #8f8f7d;
   color: #fff;
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .map {
+    height: 475px;
+  }
 }
