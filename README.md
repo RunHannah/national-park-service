@@ -1,13 +1,9 @@
 ### National Park Service
 
-#### Deployed here: https://natparkservice.herokuapp.com/
+#### Deployed here: [National Park Service](https://natparkservice.herokuapp.com/)
 
-#### Official Site: https://www.nps.gov
-
-```
 View a list of national parks, national monuments, and other natural and cultural resources by state.
-Based on the official site's landing and park list pages.
-```
+Based on the official [NPS.gov](https://www.nps.gov) site's Women's History Month landing and park list pages.
 
 <p align="center">
     <img src="readmeImages/parkSearch.png" width="50%"/>
