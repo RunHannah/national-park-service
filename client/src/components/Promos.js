@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import promosData from '../data/promosData';
 import './Promos.css';
 
 function Promos() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('/promos');
-      setData(result.data);
-    };
-    fetchData();
+    if (promosData) {
+      setData(promosData);
+    }
   }, []);
 
   return (
@@ -18,7 +16,7 @@ function Promos() {
         {data
           .sort((a, b) => a.order - b.order)
           .map((item) => (
-            <div className={`promo ${item.item}`} key={item._id}>
+            <div className={`promo ${item.item}`} key={item.id}>
               <span className='promoContent'>
                 <span className='subTitle'>{item.subTitle}</span>
                 <span className='title'>{item.title}</span>

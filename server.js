@@ -36,18 +36,6 @@ app.get('/blogPosts', async (req, res) => {
   }
 });
 
-app.get('/promos', async (req, res) => {
-  try {
-    const promosCollection = req.app.locals.promosCollection;
-    promosCollection
-      .find({})
-      .toArray()
-      .then((response) => res.json(response));
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 app.get('/parks', async (req, res) => {
   const state = req.query.state;
   const url =
