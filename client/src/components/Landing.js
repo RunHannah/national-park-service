@@ -107,12 +107,12 @@ class Landing extends Component {
     }
 
     return (
-      <div className='landingContainer'>
+      <main className='landingContainer'>
         <HomepageHero selectState={this.selectState} />
         <BlogContent />
         <SiteSections />
         <Promos />
-      </div>
+      </main>
     );
   }
 }

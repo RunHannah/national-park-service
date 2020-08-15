@@ -36,7 +36,7 @@ class Header extends Component {
     );
 
     return (
-      <div className='headerContainer'>
+      <header className='headerContainer'>
         <div className='headerWrapper'>
           <div className='miniWrapper'>
             <img
@@ -59,7 +59,7 @@ class Header extends Component {
             <NavDesktop menuOpen={this.state.menuOpen} />
           ) : null}
         </div>
-      </div>
+      </header>
     );
   }
 }
