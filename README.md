@@ -17,14 +17,13 @@ Based on the official [NPS.gov](https://www.nps.gov) site's Women's History Mont
 
 ```
 Application: React, Node.js, Express, JavaScript, HTML, CSS
-Database: MongoDB
 APIs: National Park Service, Mapbox
 ```
 
 #### Install
 
 ```bash
-# Create .env file and set value of API keys to
+# Create .env file at the root of your directory and set value of API keys to
     NPS_API_KEY
     REACT_APP_MAPBOX_API_TOKEN
 
