@@ -4,37 +4,8 @@ const app = express();
 const axios = require('axios');
 const cors = require('cors');
 const path = require('path');
-const MongoClient = require('mongodb').MongoClient;
-
-const uri = require('./config/keys').mongoURI;
-
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-client.connect((err, client) => {
-  if (err) throw err;
-  const db = client.db('npsBlog');
-  const postsCollection = db.collection('posts');
-  const promosCollection = db.collection('contentPromos');
-  app.locals.postsCollection = postsCollection;
-  app.locals.promosCollection = promosCollection;
-});
 
 app.use(cors());
-
-app.get('/blogPosts', async (req, res) => {
-  try {
-    const postsCollection = req.app.locals.postsCollection;
-    postsCollection
-      .find({})
-      .toArray()
-      .then((response) => res.json(response));
-  } catch (error) {
-    console.log(error);
-  }
-});
 
 app.get('/parks', async (req, res) => {
   const state = req.query.state;

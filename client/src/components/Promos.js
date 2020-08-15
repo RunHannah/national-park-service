@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import promosData from '../data/promosData';
+import PromosData from '../data/promosData';
 import './Promos.css';
 
 function Promos() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    if (promosData) {
-      setData(promosData);
+    if (PromosData) {
+      setData(PromosData);
     }
   }, []);
 

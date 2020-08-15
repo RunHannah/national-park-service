@@ -21,7 +21,6 @@ class Landing extends Component {
       zoom: 0,
       abbr: '',
       isLoading: false,
-      blogData: [],
       mapData: null,
     };
   }
@@ -31,19 +30,6 @@ class Landing extends Component {
       window.location.reload(false);
     };
   }
-
-  componentDidMount() {
-    this.callBlogData();
-  }
-
-  callBlogData = async () => {
-    try {
-      const response = await axios.get('/blogPosts');
-      this.setState({ blogData: response.data });
-    } catch (error) {
-      throw new Error('Unable to retrieve blog data.');
-    }
-  };
 
   callParks = async (state) => {
     try {
@@ -89,7 +75,6 @@ class Landing extends Component {
 
   render() {
     const {
-      blogData,
       isLoading,
       stateValue,
       parkData,
@@ -121,16 +106,14 @@ class Landing extends Component {
       );
     }
 
-    if (blogData) {
-      return (
-        <div className='landingContainer'>
-          <HomepageHero selectState={this.selectState} />
-          <BlogContent blogData={blogData} />
-          <SiteSections />
-          <Promos />
-        </div>
-      );
-    }
+    return (
+      <div className='landingContainer'>
+        <HomepageHero selectState={this.selectState} />
+        <BlogContent />
+        <SiteSections />
+        <Promos />
+      </div>
+    );
   }
 }
 
