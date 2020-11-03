@@ -34,9 +34,10 @@ class Landing extends Component {
   callParks = async (state) => {
     try {
       this.setState({ isLoading: true });
-      const response = await axios.get(`/parks?state=${state}`);
+      const response = await axios.get(`/.netlify/functions/parks?state=${state}`);
+
       this.setState({
-        parkData: response.data.data,
+        parkData: response.data.results.data,
         isLoading: false,
       });
     } catch (error) {
@@ -46,7 +47,8 @@ class Landing extends Component {
 
   callMap = async (lng, lat) => {
     try {
-      const response = await axios.get(`/map?lng=${lng}&lat=${lat}`);
+      const response = await axios.get(`/.netlify/functions/map?lng=${lng}&lat=${lat}`);
+
       this.setState({
         mapData: response.data,
       });
