@@ -19,3 +19,8 @@ command = "react-scripts start"
     from = "/parks/*"
     to = ".netlify/functions/parks/"
     status = 200
+
+[[redirects]]
+    from = "/map/*"
+    to = ".netlify/functions/map/"
+    status = 200
