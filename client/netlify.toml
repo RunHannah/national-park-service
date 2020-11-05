@@ -13,14 +13,14 @@ publish = "build"
 
 # Local dev command. A.k.a npm start
 
-command = "react-scripts start"
+command = "npm run start"
 
 [[redirects]]
-    from = "/parks/*"
-    to = ".netlify/functions/parks/"
-    status = 200
+from = "/parks/\*"
+to = ".netlify/functions/parks/"
+status = 200
 
 [[redirects]]
-    from = "/map/*"
-    to = ".netlify/functions/map/"
-    status = 200
+from = "/map/\*"
+to = ".netlify/functions/map/"
+status = 200
