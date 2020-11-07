@@ -1,10 +1,6 @@
 [build]
 functions = "functions"
 
-# This will be run the site build
-
-command = "npm run build"
-
 # This is the directory is publishing to netlify's CDN
 
 publish = "build"
@@ -16,11 +12,11 @@ publish = "build"
 command = "npm run start"
 
 [[redirects]]
-from = "/parks/\*"
+from = "/parks/"
 to = ".netlify/functions/parks/"
 status = 200
 
 [[redirects]]
-from = "/map/\*"
+from = "/map/"
 to = ".netlify/functions/map/"
 status = 200
